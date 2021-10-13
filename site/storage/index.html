@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="author" content="melvinpetix">
+    <link rel="canonical" href="https://petixnginx.tk/library/storage/">
+    <link rel="shortcut icon" href="../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Cloud Native Storage - melvinpetix library</title>
+    <link href="../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/highlight.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "Cloud Native Storage", url: "#_top", children: [
+              {title: "Introduction", url: "#introduction" },
+              {title: "Solutions", url: "#solutions" },
+              {title: "OpenShift Container Storage Operator (OCS)", url: "#openshift-container-storage-operator-ocs" },
+          ]},
+        ];
+
+    </script>
+    <script src="../js/base.js"></script>
+      <script src="../search/main.js"></script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../api/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../api/" class="btn btn-xs btn-link">
+        APIs with SOAP, REST and gRPC
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../securityascode/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../securityascode/" class="btn btn-xs btn-link">
+        Security Policy as Code
+      </a>
+    </div>
+    
+  </div>
+
+    
+
+    <h1 id="cloud-native-storage">Cloud Native Storage</h1>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#solutions">Solutions</a></li>
+<li><a href="#openshift-container-storage-operator-ocs">OpenShift Container Storage Operator (OCS)</a><ul>
+<li><a href="#ocs-3-openshift-3">OCS 3 (OpenShift 3)</a></li>
+<li><a href="#ocs-4-openshift-4">OCS 4 (OpenShift 4)</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<ul>
+<li><a href="https://thenewstack.io/a-guide-to-running-stateful-applications-in-kubernetes/">A Guide to Running Stateful Applications in Kubernetes</a></li>
+<li><a href="https://www.forbes.com/sites/janakirammsv/2019/06/28/5-cloud-native-storage-startups-to-watch-out-for-in-2019/">5 Cloud Native Storage Startups To Watch Out For In 2019</a></li>
+</ul>
+<h2 id="solutions">Solutions</h2>
+<ul>
+<li><a href="https://openebs.io/">OpenEBS</a> extends the benefits of software-defined storage to cloud native through the container attached approach. <ul>
+<li><a href="https://mayadata.io/">MayaData</a> Founder of OpenEBS</li>
+</ul>
+</li>
+<li><a href="https://storageos.com/">StorageOS</a></li>
+<li><a href="https://rook.io/">Rook</a></li>
+<li><a href="https://robin.io/">Robin</a></li>
+<li><a href="https://www.reduxio.com/">Reduxio</a></li>
+<li><a href="https://portworx.com/">Portworx</a></li>
+<li><a href="https://longhorn.io/">Longhorn</a><ul>
+<li><a href="https://thenewstack.io/rancher-donates-its-longhorn-kubernetes-persistent-storage-software-to-cncf/">thenewstack.io: Rancher Donates its ‘Longhorn’ Kubernetes Persistent Storage Software to CNCF</a>. Gluster and Ceph were “designed to be run by some storage admin. In the Kubernetes world, a lot of these things tend to be deployed by DevOps teams, so (the storage layer) needs to be a lot more lightweight and a lot simpler.” — Rancher Labs CEO Sheng Liang.</li>
+</ul>
+</li>
+</ul>
+<h2 id="openshift-container-storage-operator-ocs">OpenShift Container Storage Operator (OCS)</h2>
+<ul>
+<li><a href="https://www.openshift.com/blog/state-of-openshift-container-storage-eran-tamir-and-duncan-hardie-red-hat">State of OpenShift Container Storage</a></li>
+</ul>
+<h3 id="ocs-3-openshift-3">OCS 3 (OpenShift 3)</h3>
+<ul>
+<li>OpenShift Container Storage based on <a href="https://www.gluster.org/">GlusterFS</a> technology.</li>
+<li>Not OpenShift 4 compliant: Migration tooling will be available to facilitate the move to OCS 4.x (OpenShift Gluster APP Mitration Tool).</li>
+</ul>
+<h3 id="ocs-4-openshift-4">OCS 4 (OpenShift 4)</h3>
+<ul>
+<li><strong>OCS Operator</strong> based on Rook.io with Operator LifeCycle Manager (OLM).</li>
+<li>Tech Stack:<ul>
+<li><a href="https://rook.io">Rook</a> (don't confuse this with non-redhat <a href="https://operatorhub.io/operator/rook-ceph">"Rook Ceph"</a> -&gt; <a href="https://www.redhat.com/en/blog/rook-ceph-storage-operator-now-operatorhubio">RH ref</a>).<ul>
+<li>Replaces <a href="https://github.com/heketi/heketi">Heketi</a>  (OpenShift 3)</li>
+<li>Uses <strong>Red Hat Ceph Storage</strong> and <strong>Noobaa</strong>.</li>
+</ul>
+</li>
+<li><a href="https://ceph.io">Red Hat Ceph Storage</a></li>
+<li><a href="https://www.noobaa.io">Noobaa</a>:<ul>
+<li>Red Hat Multi Cloud Gateway (AWS, Azure, GCP, etc)</li>
+<li>Asynchronous replication of data between my local ceph and my cloud provider</li>
+<li>Deduplication</li>
+<li>Compression</li>
+<li>Encryption</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Backups available in OpenShift 4.2+ (Snapshots + Restore of Volumes)</li>
+<li>OCS Dashboard in OCS Operator</li>
+</ul>
+
+  <br>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../api/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../api/" class="btn btn-xs btn-link">
+        APIs with SOAP, REST and gRPC
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../securityascode/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../securityascode/" class="btn btn-xs btn-link">
+        Security Policy as Code
+      </a>
+    </div>
+    
+  </div>
+
+    <br>
+</div>
+
+<footer class="col-md-12 wm-page-content">
+      <p>
+        <a href="https://github.com/melvinpetix/library/edit/master/docs/storage.md"><i class="fa fa-github"></i>
+Edit on GitHub</a>
+      </p><p>2020 melvinpetix™</p>
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/melvinpetix/library/">Windmill Dark</a> theme by melvinpetix (noraj).</p>
+</footer>
+
+</body>
+</html>

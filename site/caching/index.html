@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="author" content="melvinpetix">
+    <link rel="canonical" href="https://petixnginx.tk/library/caching/">
+    <link rel="shortcut icon" href="../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Caching Solutions - melvinpetix library</title>
+    <link href="../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/highlight.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "Caching Solutions", url: "#_top", children: [
+              {title: "Caching", url: "#caching" },
+              {title: "Java Caching", url: "#java-caching" },
+              {title: "Infinispan", url: "#infinispan" },
+              {title: "Red Hat Data Grid (commercial version of Infinispan)", url: "#red-hat-data-grid-commercial-version-of-infinispan" },
+              {title: "CDN Content Delivery Network", url: "#cdn-content-delivery-network" },
+              {title: "HAProxy", url: "#haproxy" },
+              {title: "Varnish", url: "#varnish" },
+              {title: "Memcached", url: "#memcached" },
+              {title: "Redis", url: "#redis" },
+              {title: "Nginx High-performance caching", url: "#nginx-high-performance-caching" },
+          ]},
+        ];
+
+    </script>
+    <script src="../js/base.js"></script>
+      <script src="../search/main.js"></script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../monitoring/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../monitoring/" class="btn btn-xs btn-link">
+        Monitoring and Performance. Prometheus, Grafana, APMs and more
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../embedded-servlet-containers/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../embedded-servlet-containers/" class="btn btn-xs btn-link">
+        Embedded Servlet Containers in SpringBoot
+      </a>
+    </div>
+    
+  </div>
+
+    
+
+    <h1 id="caching-solutions">Caching Solutions</h1>
+<ul>
+<li><a href="#caching">Caching</a></li>
+<li><a href="#java-caching">Java Caching</a></li>
+<li><a href="#infinispan">Infinispan</a></li>
+<li><a href="#red-hat-data-grid-commercial-version-of-infinispan">Red Hat Data Grid (commercial version of Infinispan)</a></li>
+<li><a href="#cdn-content-delivery-network">CDN Content Delivery Network</a></li>
+<li><a href="#haproxy">HAProxy</a></li>
+<li><a href="#varnish">Varnish</a></li>
+<li><a href="#memcached">Memcached</a></li>
+<li><a href="#redis">Redis</a></li>
+<li><a href="#nginx-high-performance-caching">Nginx High-performance caching</a></li>
+</ul>
+<h2 id="caching">Caching</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Web_cache">Wikipedia: Web cache</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Dynamic_site_acceleration">Wikipedia: Dynamic site acceleration</a></li>
+<li><a href="http://www.slideshare.net/NasceniaIT/brown-bag-caching-rafi-faisal-48694442">Slideshare: Caching</a></li>
+<li><a href="https://www.cyberciti.biz/open-source/http-web-performance-proxy-load-balancer-accelerator-software/">nixCraft: 9 Awesome Open Source Web Performance Software For Linux and Unix-like Systems</a></li>
+<li><a href="https://dzone.com/articles/introducing-amp-assimilating-caching-quick-read-fo">Dzone: An Introduction to Caching: How and Why We Do It 🌟</a> When it comes to caching, what was once a nice-to-have it now a must-have. Check out this detailed article to learn everything you need to know about caching!</li>
+</ul>
+<h2 id="java-caching">Java Caching</h2>
+<ul>
+<li><a href="https://dzone.com/refcardz/java-caching">DZone refcard: Java Caching</a> Strategies and the JCache API. Explores the building blocks of JCache and other caching APIs, as well as multiple strategies for implementing temporary data storage in your application.</li>
+</ul>
+<h2 id="infinispan">Infinispan</h2>
+<ul>
+<li><a href="https://infinispan.org/about/">Introduction to Infinispan</a> Distributed in-memory key/value data grid and cache</li>
+<li><a href="https://dzone.com/refcardz/getting-started-infinispan">Dzone: Getting Started with Infinispan</a> Enhance Performance With Scalable, Highly Available Data Stores. Infinispan is an open-source, ASL 2.0-licensed, in-memory data grid platform based on Java 8. This newly updated Refcard offers tips for implementing Infinispan, gives a practical example for using it in embedded mode, and lists key APIs and cache features. Learn more about running Infinispan in containers and how to integrate the platform with Hibernate ORM, Apache Hadoop, Apache Spark, and Apache Camel.</li>
+</ul>
+<h2 id="red-hat-data-grid-commercial-version-of-infinispan">Red Hat Data Grid (commercial version of Infinispan)</h2>
+<ul>
+<li>In 2011, Red Hat began producing a commercial version of Infinispan, dubbed JBoss Enterprise Data Grid. </li>
+<li><a href="https://developers.redhat.com/products/datagrid/overview">Red Hat Data Grid Overview</a></li>
+<li><a href="https://www.redhat.com/en/technologies/jboss-middleware/data-grid">Red Hat Data Grid</a></li>
+<li><a href="https://thenewstack.io/red-hat-jboss-data-grid-not-just-storing-java-objects-anymore/">Red Hat JBoss Data Grid is Not Just for Caching Java Objects Anymore 🌟</a></li>
+<li><a href="https://developers.redhat.com/blog/2020/04/13/red-hat-data-grid-8-0-brings-new-server-architecture-improved-rest-api-and-more/">developers.redhat.com: Red Hat Data Grid 8.0 brings new server architecture, improved REST API, and more</a></li>
+</ul>
+<h2 id="cdn-content-delivery-network">CDN Content Delivery Network</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Content_delivery_network">Wikipedia: CDN Content Delivery Network</a><ul>
+<li><a href="https://en.wikipedia.org/wiki/Content_delivery_network#Traditional_commercial_CDNs">Traditional commercial CDNs 🌟</a></li>
+</ul>
+</li>
+<li><a href="https://humanwhocodes.com/blog/2011/11/29/how-content-delivery-networks-cdns-work/">How content delivery networks (CDNs) work</a></li>
+<li><a href="https://www.imperva.com/learn/performance/cdn-caching/">imperva.com: CDN Caching</a></li>
+<li><a href="https://www.nczonline.net/blog/2011/11/29/how-content-delivery-networks-cdns-work/">nczonline: How content delivery networks (CDNs) work - Nov 2011</a></li>
+</ul>
+<h2 id="haproxy">HAProxy</h2>
+<ul>
+<li><a href="http://www.haproxy.org">HAProxy</a></li>
+<li><a href="http://www.slideshare.net/haproxytech/haproxy-web-performance-55536394">slideshare: Haproxy web performance</a></li>
+<li><a href="http://www.slideshare.net/Severalnines/load-balancing-mysql-with-haproxy-webinar-replay-english-44071270">slideshare: Load Balancing MySQL with HAProxy</a></li>
+<li><a href="http://www.slideshare.net/haproxytech/haproxy-best-practice">slideshare: Haproxy best practice</a></li>
+<li><a href="http://www.slideshare.net/Severalnines/severalnines-ha-proxyjul20143">slideshare: How To Set Up SQL Load Balancing with HAProxy</a></li>
+<li><a href="http://www.slideshare.net/Severalnines/haproxy-mysql-slides">slideshare: Performance Tuning of HAProxy for Database Load Balancing</a></li>
+</ul>
+<p><center></p>
+<div class="container">
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/hkcICcrntApXsr" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen class="video"> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/haproxytech/haproxy-best-practice" title="Haproxy best practice" target="_blank">Haproxy best practice</a> </strong> from <strong><a target="_blank" href="//www.slideshare.net/haproxytech">haproxytech</a></strong> </div>
+</div>
+<p></center>
+<br/></p>
+<h2 id="varnish">Varnish</h2>
+<ul>
+<li><a href="https://www.varnish-cache.org/">Varnish Cache</a></li>
+<li><a href="https://www.varnish-software.com">varnish-software.com</a> Varnish Software is the company behind Varnish Cache, the open source HTTP accelerator.<ul>
+<li><a href="http://info.varnish-software.com/the-varnish-book">The Varnish Book</a> Download the Varnish Book to learn how you can optimize your Varnish instance.</li>
+</ul>
+</li>
+<li><a href="https://fedoramagazine.org/varnish-site-faster-stable/">fedoramagazine.org: Varnish: Your site faster and more stable</a></li>
+<li><a href="https://developerblog.redhat.com/tag/varnish/">Red Hat Developer Blog. Tag: Varnish</a></li>
+<li><a href="http://rhelblog.redhat.com/tag/varnish/">Red Hat Enterprise Linux Blog. Tag: Varnish</a></li>
+<li><a href="https://www.varnish-cache.org/installation/redhat">varnish-cache.org: Installation on RedHat</a></li>
+<li><a href="https://hitch-tls.org/">Hitch - scalable TLS proxy. Hitch is a libev-based high performance SSL/TLS proxy by Varnish Software</a></li>
+<li><a href="http://www.slideshare.net/piotrpasich/varnish-47199139">slideshare: Varnish - Tips &amp; Tricks - 4Developers 2015</a></li>
+</ul>
+<p><center></p>
+<div class="container">
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/fQrbxcE741QjvX" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen class="video"> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/kimlindholm/varnish-configuration-step-by-step" title="Varnish Configuration Step by Step" target="_blank">Varnish Configuration Step by Step</a> </strong> from <strong><a target="_blank" href="//www.slideshare.net/kimlindholm">Kim Stefan Lindholm</a></strong> </div>
+</div>
+<p></center>
+<br/></p>
+<p><center></p>
+<div class="container">
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/JlHlus2tBHDZVi" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen class="video"> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/ivanchepurnyi/advanced-varnishusage" title="Varnish Cache and its usage in the real world!" target="_blank">Varnish Cache and its usage in the real world!</a> </strong> from <strong><a target="_blank" href="//www.slideshare.net/ivanchepurnyi">Ivan Chepurnyi</a></strong> </div>
+</div>
+<p></center>
+<br/></p>
+<p><center></p>
+<div class="container">
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/crhLrhAgnlZmLv" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen class="video"> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/samanthaquinonestembies/superchargin-varnish" title="Supercharging Content Delivery with Varnish" target="_blank">Supercharging Content Delivery with Varnish</a> </strong> from <strong><a target="_blank" href="//www.slideshare.net/samanthaquinonestembies">Samantha Quiñones</a></strong> </div>
+</div>
+<p></center>
+<br/></p>
+<h2 id="memcached">Memcached</h2>
+<ul>
+<li><a href="http://memcached.org">memcached.org</a></li>
+<li><a href="http://www.slideshare.net/oemebamo/introduction-to-memcached">Slideshare: Introduction to memcached</a></li>
+<li><a href="https://dzone.com/articles/the-power-of-the-proxy-request-routing-memcached">DZone - The Power of the Proxy: Request Routing Memcached</a></li>
+</ul>
+<p><center></p>
+<div class="container">
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/rqpOlUNkU6NOvo" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen class="video"> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/oemebamo/introduction-to-memcached" title="Introduction to memcached" target="_blank">Introduction to memcached</a> </strong> from <strong><a target="_blank" href="//www.slideshare.net/oemebamo">Jurriaan Persyn</a></strong> </div></div>
+<p></center>
+<br/></p>
+<h2 id="redis">Redis</h2>
+<ul>
+<li><a href="http://redis.io">redis.io</a></li>
+<li><a href="http://www.slideshare.net/dvirsky/introduction-to-redis">Slideshare: Introduction to Redis</a></li>
+</ul>
+<p><center></p>
+<div class="container">
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/3nvYR34GEVLEei" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen class="video"> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/dvirsky/introduction-to-redis" title="Introduction to Redis" target="_blank">Introduction to Redis</a> </strong> from <strong><a target="_blank" href="//www.slideshare.net/dvirsky">Dvir Volk</a></strong> </div>
+</div>
+<p></center>
+<br/></p>
+<p><center></p>
+<div class="container">
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/42WDX39CPeO9e6" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen class="video"> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/NasceniaIT/brown-bag-caching-rafi-faisal-48694442" title="Caching" target="_blank">Caching</a> </strong> from <strong><a target="_blank" href="//www.slideshare.net/NasceniaIT">Nascenia IT</a></strong> </div></div>
+<p></center>
+<br/></p>
+<p><center></p>
+<div class="container">
+<iframe src="https://www.youtube.com/embed/bjXNWBaIWjM?rel=0" frameborder="0" allowfullscreen class="video"></iframe>
+</div>
+<p></center>
+<br/></p>
+<h2 id="nginx-high-performance-caching">Nginx High-performance caching</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=OssIuHbgzJY">Nginxconf 2014. When Dynamic Becomes Static:The Next Step in Web Caching Techniques: Wim Godden</a></li>
+<li><a href="https://dzone.com/articles/the-benefits-of-microcaching-with-nginx">dzone: The Benefits of Microcaching with NGINX</a></li>
+<li><a href="https://dzone.com/articles/scaling-web-applications-with-nginx-part-ii-cachin">dzone: Scaling Web Applications with NGINX – Part II: Caching and Monitoring</a></li>
+<li><a href="http://charlesleifer.com/blog/nginx-a-caching-thumbnailing-reverse-proxying-image-server-/">Nginx: a caching, thumbnailing, reverse proxying image server? 🌟</a></li>
+<li><a href="http://highscalability.com/blog/2016/2/17/building-nginx-and-tarantool-based-services.html">highscalability.com: Building nginx and Tarantool based services 🌟</a></li>
+</ul>
+<p><center></p>
+<div class="container">
+<iframe src="https://www.youtube.com/embed/OssIuHbgzJY?rel=0" frameborder="0" allowfullscreen class="video"></iframe>
+</div>
+<p></center>
+<br/></p>
+<p><center></p>
+<div class="container">
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/wC5wngKnh2iydS" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen class="video"> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/Nginx/nginx-highperformance-caching" title="NGINX High-performance Caching" target="_blank">NGINX High-performance Caching</a> </strong> from <strong><a href="//www.slideshare.net/Nginx" target="_blank">NGINX, Inc.</a></strong> </div></div>
+<p></center>
+<br/></p>
+
+  <br>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../monitoring/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../monitoring/" class="btn btn-xs btn-link">
+        Monitoring and Performance. Prometheus, Grafana, APMs and more
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../embedded-servlet-containers/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../embedded-servlet-containers/" class="btn btn-xs btn-link">
+        Embedded Servlet Containers in SpringBoot
+      </a>
+    </div>
+    
+  </div>
+
+    <br>
+</div>
+
+<footer class="col-md-12 wm-page-content">
+      <p>
+        <a href="https://github.com/melvinpetix/library/edit/master/docs/caching.md"><i class="fa fa-github"></i>
+Edit on GitHub</a>
+      </p><p>2020 melvinpetix™</p>
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/melvinpetix/library/">Windmill Dark</a> theme by melvinpetix (noraj).</p>
+</footer>
+
+</body>
+</html>

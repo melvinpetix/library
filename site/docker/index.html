@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="author" content="melvinpetix">
+    <link rel="canonical" href="https://petixnginx.tk/library/docker/">
+    <link rel="shortcut icon" href="../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Docker - melvinpetix library</title>
+    <link href="../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/highlight.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "Docker", url: "#_top", children: [
+              {title: "Introduction", url: "#introduction" },
+              {title: "Docker and WSL2", url: "#docker-and-wsl2" },
+              {title: "Docker Cheat sheet", url: "#docker-cheat-sheet" },
+              {title: "Docker Compose", url: "#docker-compose" },
+              {title: "Moving Linux Services Into Containers", url: "#moving-linux-services-into-containers" },
+              {title: "Portainer", url: "#portainer" },
+              {title: "Linux Container Base Images", url: "#linux-container-base-images" },
+              {title: "Blogs", url: "#blogs" },
+              {title: "Awesome Lists", url: "#awesome-lists" },
+          ]},
+        ];
+
+    </script>
+    <script src="../js/base.js"></script>
+      <script src="../search/main.js"></script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../kubernetes/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../kubernetes/" class="btn btn-xs btn-link">
+        Kubernetes
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../workfromhome/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../workfromhome/" class="btn btn-xs btn-link">
+        Work From Home
+      </a>
+    </div>
+    
+  </div>
+
+    
+
+    <h1 id="docker">Docker</h1>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#docker-and-wsl2">Docker and WSL2</a></li>
+<li><a href="#docker-cheat-sheet">Docker Cheat sheet</a></li>
+<li><a href="#docker-compose">Docker Compose</a></li>
+<li><a href="#moving-linux-services-into-containers">Moving Linux Services Into Containers</a></li>
+<li><a href="#portainer">Portainer</a></li>
+<li><a href="#linux-container-base-images">Linux Container Base Images</a></li>
+<li><a href="#blogs">Blogs</a></li>
+<li><a href="#awesome-lists">Awesome Lists</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Docker_(software)">Wikipedia.org: Docker</a></li>
+<li><a href="https://github.com/veggiemonk/awesome-docker">Awesome Docker</a></li>
+<li><a href="https://dzone.com/refcardz/getting-started-with-docker-1">Dzone refcard: Getting Started with Docker</a></li>
+<li><a href="https://dzone.com/refcardz/java-containerization">Dzone refcard: Java Containerization 🌟</a></li>
+<li><a href="https://americanexpress.io/do-not-run-dockerized-applications-as-root/">americanexpress.io: <strong>Do Not Run Dockerized Applications as Root</strong> 🌟</a></li>
+<li><a href="https://medium.com/@jon.froiland/removing-docker-images-containers-and-volumes-with-ease-fdf16bebccec">medium.com: Removing Docker Images, Containers, and Volumes with Ease</a></li>
+<li><a href="https://medium.freecodecamp.com/a-beginner-friendly-introduction-to-containers-vms-and-docker-79a9e3e119b">medium.freecodecamp.com: A Beginner-Friendly Introduction to Containers, VMs and Docker</a></li>
+<li><a href="https://developers.redhat.com/blog/2016/03/09/more-about-docker-images-size/">developers.redhat.com: Keep it small: a closer look at Docker image sizing</a></li>
+<li><a href="https://play.google.com/store/apps/details?id=com.LearningSolution.LearnDocker&amp;hl=en">Google Play: Learning Solution - Learn Docker 🌟</a></li>
+<li><a href="https://labs.play-with-docker.com/">Play with docker 🌟</a> A simple, interactive and fun playground to learn Docker</li>
+<li><a href="https://blog.docker.com/2019/07/intro-guide-to-dockerfile-best-practices/">blog.docker.com: Intro Guide to Dockerfile Best Practices 🌟</a></li>
+<li><a href="https://medium.com/sciforce/strategies-of-docker-images-optimization-2ca9cc5719b6">medium: Strategies of docker images optimization</a></li>
+<li><a href="https://dzone.com/articles/docker-explained-an-introductory-guide-to-docker">Dzone: Docker explained, an introductory guide to docker</a></li>
+<li><a href="https://dzone.com/articles/everything-you-need-to-know-about-docker">Dzone: everything you need to know about docker</a></li>
+<li><a href="https://dzone.com/articles/a-start-to-finish-guide-to-docker-with-java">Dzone: a start to finish guide to docker with java</a></li>
+<li><a href="https://www.docker.com/blog/intro-guide-to-dockerfile-best-practices/">docker.com: Intro Guide to Dockerfile Best Practices</a></li>
+<li><a href="https://github.com/docker/build-push-action"><strong>GitHub build-push-action</strong></a> Build+push official Docker GitHub action</li>
+<li><a href="https://www.docker.com/blog/speed-up-your-development-flow-with-these-dockerfile-best-practices/">docker.com: Speed Up Your Development Flow With These Dockerfile Best Practices</a></li>
+<li><a href="https://itnext.io/getting-started-with-docker-facts-you-should-know-d000e5815598">itnext.io: Getting Started with Docker: Facts You Should Know 🌟</a></li>
+<li><a href="https://jfrog.com/knowledge-base/a-beginners-guide-to-understanding-and-building-docker-images/">jfrog.com: A Beginner’s Guide to Understanding and Building Docker Images 🌟</a></li>
+</ul>
+<h2 id="docker-and-wsl2">Docker and WSL2</h2>
+<ul>
+<li><a href="https://www.docker.com/blog/creating-the-best-linux-development-experience-on-windows-wsl-2/">Creating the best Linux Development experience on Windows &amp; WSL 2</a></li>
+</ul>
+<h2 id="docker-cheat-sheet">Docker Cheat sheet</h2>
+<ul>
+<li><a href="../cheatsheets/">Docker Cheat Sheets</a></li>
+</ul>
+<h2 id="docker-compose">Docker Compose</h2>
+<ul>
+<li><a href="https://www.freecodecamp.org/news/a-beginners-guide-to-docker-how-to-create-a-client-server-side-with-docker-compose-12c8cf0ae0aa/">freecodecamp.org: a beginners guide to docker - how to create a client server side with docker compose</a></li>
+<li><a href="https://www.docker.com/blog/announcing-the-compose-specification/">docker.com: Announcing the Compose Specification 🌟</a></li>
+<li><a href="https://www.infoworld.com/article/3536573/dockers-compose-specification-is-now-an-open-standard.html">infoworld.com: Docker's Compose specification is now an open standard</a> Docker’s system for creating applications from multiple containers is now available on GitHub for all to contribute to.</li>
+<li><a href="https://www.theregister.co.uk/2020/04/08/docker_opens_up_compose_specification/">theregister.co.uk: Compose yourselves – Docker has published multi-container app spec, needs contributors to help maintain and develop it</a> Now focused on developers, firm wants its tools to be more universally useful. Keep it light(weight), though.</li>
+<li><a href="https://github.com/docker/awesome-compose">Awesome Compose</a></li>
+</ul>
+<h2 id="moving-linux-services-into-containers">Moving Linux Services Into Containers</h2>
+<ul>
+<li><a href="http://crunchtools.com/moving-linux-services-to-containers/">crunchtools.com: A Hacker’s Guide to Moving Linux Services into Containers. Epic 15 page blog post showing people how to move Wordpress (php), Mediawiki (php), and Request Tracker (perl) into containers</a></li>
+</ul>
+<h2 id="portainer">Portainer</h2>
+<ul>
+<li><a href="https://www.portainer.io/">Portainer 🌟</a> Making Docker management easy</li>
+</ul>
+<h2 id="linux-container-base-images">Linux Container Base Images</h2>
+<ul>
+<li><a href="http://crunchtools.com/comparison-linux-container-images/">crunchtools.com: A Comparison of Linux Container Images</a></li>
+<li><a href="https://kubedex.com/base-images/">kubedex.com: Base images comparison</a></li>
+<li><a href="https://developers.redhat.com/blog/2020/03/24/red-hat-universal-base-images-for-docker-users/">developers.redhat.com: Red Hat Universal Base Images for Docker users</a></li>
+</ul>
+<h2 id="blogs">Blogs</h2>
+<ul>
+<li><a href="https://www.digitalocean.com/community/tags/docker">Digital Ocean: Docker Tutorials</a></li>
+</ul>
+<h2 id="awesome-lists">Awesome Lists</h2>
+<ul>
+<li><a href="https://github.com/veggiemonk/awesome-docker">Awesome Docker 🌟</a></li>
+<li><a href="https://github.com/docker/awesome-compose">Awesome Compose 🌟</a></li>
+</ul>
+<iframe scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/273312823&amp;color=ff5500"></iframe>
+
+<iframe src="https://www.youtube.com/embed/n-JwAM6XF88" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+<iframe src="https://www.youtube.com/embed/EnJ7qX9fkcU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+  <br>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../kubernetes/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../kubernetes/" class="btn btn-xs btn-link">
+        Kubernetes
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../workfromhome/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../workfromhome/" class="btn btn-xs btn-link">
+        Work From Home
+      </a>
+    </div>
+    
+  </div>
+
+    <br>
+</div>
+
+<footer class="col-md-12 wm-page-content">
+      <p>
+        <a href="https://github.com/melvinpetix/library/edit/master/docs/docker.md"><i class="fa fa-github"></i>
+Edit on GitHub</a>
+      </p><p>2020 melvinpetix™</p>
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/melvinpetix/library/">Windmill Dark</a> theme by melvinpetix (noraj).</p>
+</footer>
+
+</body>
+</html>

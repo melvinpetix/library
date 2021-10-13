@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="author" content="melvinpetix">
+    <link rel="canonical" href="https://petixnginx.tk/library/jvm-parameters-matrix-table/">
+    <link rel="shortcut icon" href="../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Java Parameters Matrix Table - melvinpetix library</title>
+    <link href="../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/highlight.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+        ];
+
+    </script>
+    <script src="../js/base.js"></script>
+      <script src="../search/main.js"></script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../visual-studio/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../visual-studio/" class="btn btn-xs btn-link">
+        Visual Studio Code
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../java-and-java-performance-optimization/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../java-and-java-performance-optimization/" class="btn btn-xs btn-link">
+        Java Memory Management & Java Performance Optimization
+      </a>
+    </div>
+    
+  </div>
+
+    
+
+    <table>
+<thead>
+<tr>
+<th align="left"><strong>JVM Parameters</strong></th>
+<th align="left"><strong>Enable?</strong></th>
+<th align="left"><strong>References / Details</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">-XX:+UseG1GC</td>
+<td align="left">Enabled by default in Java 8u191+</td>
+<td align="left">Most important defaults specific to G1 and their default values.<br/> <a href="https://dzone.com/articles/choosing-the-right-gc">https://dzone.com/articles/choosing-the-right-gc</a><br/> <a href="https://wiki.openjdk.java.net/display/HotSpot/G1GC+Feedback">https://wiki.openjdk.java.net/display/HotSpot/G1GC+Feedback</a><br/> Alternative: Shenandoah GC</td>
+</tr>
+<tr>
+<td align="left">-XX:+UseShenandoahGC</td>
+<td align="left">Alternative to G1GC.</td>
+<td align="left">Shenandoah Garbage Collector: experimental in Java 8, newer than G1GC, available in some OpenJDK 8 and newer releases.<br/> <a href="https://wiki.openjdk.java.net/display/shenandoah/Main">https://wiki.openjdk.java.net/display/shenandoah/Main</a> <br/> <a href="https://dzone.com/articles/7-jvm-arguments-of-highly-effective-applications-1">https://dzone.com/articles/7-jvm-arguments-of-highly-effective-applications-1</a></td>
+</tr>
+<tr>
+<td align="left">-XX:+UseZGC</td>
+<td align="left">Yes (JDK 11+)</td>
+<td align="left">Z GC : Better Garbage Collector Algorithm than G1 or Shenandoah. JDK 11+ required.<br/> The Z Garbage Collector, also known as ZGC, is a scalable low latency garbage collector designed to meet the following goals:<br/> · Pause times do not exceed 10ms (*)<br/> · Pause times do not increase with the heap or live-set size<br/> · Handle heaps ranging from a 8MB to 16TB in size<br/> At a glance, ZGC is:<br/> · Concurrent<br/> · Region-based<br/> · Compacting<br/> · NUMA-aware<br/> · Using colored pointers<br/> · Using load barriers<br/> At its core, ZGC is a concurrent garbage collector, meaning all heavy lifting work is done while Java threads continue to execute. This greatly limits the impact garbage collection will have on your application's response time.<br/> 7 JVM Arguments of Highly Effective Applications<br/> <a href="https://wiki.openjdk.java.net/display/zgc/Main">https://wiki.openjdk.java.net/display/zgc/Main</a></td>
+</tr>
+<tr>
+<td align="left">-XX:MaxRAMPercentage</td>
+<td align="left">Yes</td>
+<td align="left">Java 8u191+ required.<br/>The old (and somewhat broken) flags -XX:{Min|Max}RAMFraction are now deprecated. <br/>There is a new flag -XX:MaxRAMPercentage, that takes a value between 0.0 and 100.0 and defaults to 25.0. <br/>So if there is a 1 GB memory limit, the JVM heap is limited to ~250 MB by default. <br/>While this can certainly be improved — depending on the RAM size and workload — it’s a pretty good default compared to the old behaviour.<br/> <a href="https://medium.com/adorsys/usecontainersupport-to-the-rescue-e77d6cfea712">https://medium.com/adorsys/usecontainersupport-to-the-rescue-e77d6cfea712</a></td>
+</tr>
+<tr>
+<td align="left">-XX:+UseContainerSupport</td>
+<td align="left">Enabled by default</td>
+<td align="left">Java 8u191+ required (enabled by default in Linux)<br/> <a href="https://medium.com/adorsys/jvm-memory-settings-in-a-container-environment-64b0840e1d9e">https://medium.com/adorsys/jvm-memory-settings-in-a-container-environment-64b0840e1d9e</a><br/> <a href="https://medium.com/adorsys/usecontainersupport-to-the-rescue-e77d6cfea712">https://medium.com/adorsys/usecontainersupport-to-the-rescue-e77d6cfea712</a><br/> Please note that setting -Xmx and -Xms disables the automatic heap sizing.<br/> # check if +UseContainerSupport is enabled<br/> $ java -XX:+PrintFlagsFinal -version</td>
+</tr>
+<tr>
+<td align="left">-XshowSettings:vm</td>
+<td align="left">Yes</td>
+<td align="left">This is a priceless feature to display all the settings of the JVM, together with -XX:+PrintCommandLineFlags it can show a world of hidden stuff.<br/> <a href="http://www.javamonamour.org/2018/11/java-showsettings.html">http://www.javamonamour.org/2018/11/java-showsettings.html</a></td>
+</tr>
+<tr>
+<td align="left">-XX:MaxRAMFraction</td>
+<td align="left">No (deprecated)</td>
+<td align="left">Requires JDK 8u131+<br/> -XX:MaxRAMFraction deprecated since Java 8u191+ (use -XX:MaxRAMPercentage instead)<br/> <a href="https://dzone.com/articles/running-a-jvm-in-a-container-without-getting-kille">https://dzone.com/articles/running-a-jvm-in-a-container-without-getting-kille</a><br/> <a href="https://developers.redhat.com/blog/2017/03/14/java-inside-docker/">https://developers.redhat.com/blog/2017/03/14/java-inside-docker/</a><br/> <a href="https://merikan.com/2019/04/jvm-in-a-container/">https://merikan.com/2019/04/jvm-in-a-container/</a></td>
+</tr>
+<tr>
+<td align="left">-XX:+UseCGroupMemoryLimitForHeap</td>
+<td align="left">No (deprecated)</td>
+<td align="left">JDK 8u131+ required<br/> Deprecated in Java10 &amp; Java8u191+<br/> <a href="https://dzone.com/articles/running-a-jvm-in-a-container-without-getting-kille">https://dzone.com/articles/running-a-jvm-in-a-container-without-getting-kille</a><br/> <a href="https://developers.redhat.com/blog/2017/03/14/java-inside-docker/">https://developers.redhat.com/blog/2017/03/14/java-inside-docker/</a><br/> <a href="https://merikan.com/2019/04/jvm-in-a-container/">https://merikan.com/2019/04/jvm-in-a-container/</a><br/> Java memory management and configuration is still complex. Although the JVM can read cgroup memory limits and adapt memory usage accordingly since Java 9/8u131, <br/>it’s not a golden bullet. You need to know what -XX:+UseCGroupMemoryLimitForHeap does and you need to fine tune some parameters for every deployment. <br/>Otherwise you risk wasting resources and money or getting your containers killed at the worst time possible. -XX:MaxRAMFraction=1 is especially dangerous. <br/>Java 10+ brings a lot of improvements but still needs manual configuration. To be safe, load test your stuff.</td>
+</tr>
+<tr>
+<td align="left">-XX:+UseStringDeduplication</td>
+<td align="left">Yes</td>
+<td align="left"><a href="https://www.baeldung.com/jvm-garbage-collectors">https://www.baeldung.com/jvm-garbage-collectors</a></td>
+</tr>
+<tr>
+<td align="left">-XX:+HeapDumpOnOutOfMemoryError<br/> -XX:HeapDumpPath</td>
+<td align="left">Yes</td>
+<td align="left">When running a JVM in a docker container it is probably wise to use the HeapDumpOnOutOfMemoryError option so if you ever run out of memmory the jvm will write a dump of the heap to disk.<br/> <a href="https://merikan.com/2019/04/jvm-in-a-container/">https://merikan.com/2019/04/jvm-in-a-container/</a><br/> <a href="https://dzone.com/articles/7-jvm-arguments-of-highly-effective-applications-1">https://dzone.com/articles/7-jvm-arguments-of-highly-effective-applications-1</a></td>
+</tr>
+<tr>
+<td align="left">-Xss</td>
+<td align="left">Test</td>
+<td align="left">Increase the thread’s stack size limit by passing the -Xss argument.<br/> <a href="https://dzone.com/articles/7-jvm-arguments-of-highly-effective-applications-1">https://dzone.com/articles/7-jvm-arguments-of-highly-effective-applications-1</a><br/> Each application will have tens, hundreds, thousands of threads. Each thread will have its own stack. Each one of them consumes memory. <br/>If their consumption goes beyond a certain limit, then a StackOverflowError is thrown. More details about StackOverflowError and solutions to resolve it can be found in this article.<br/> Linux 64-bit JVM Default thread stack size = 1024k<br/> -Xss2m : This will set the thread's stack size to 2mb</td>
+</tr>
+<tr>
+<td align="left">-Dsun.net.client.defaultConnectTimeout<br/>-Dsun.net.client.defaultReadTimeout</td>
+<td align="left">Yes</td>
+<td align="left"><a href="https://dzone.com/articles/7-jvm-arguments-of-highly-effective-applications-1">https://dzone.com/articles/7-jvm-arguments-of-highly-effective-applications-1</a></td>
+</tr>
+<tr>
+<td align="left">-Duser.timeZone</td>
+<td align="left">Yes</td>
+<td align="left"><a href="https://dzone.com/articles/7-jvm-arguments-of-highly-effective-applications-1">https://dzone.com/articles/7-jvm-arguments-of-highly-effective-applications-1</a></td>
+</tr>
+<tr>
+<td align="left">Enable GC Logging</td>
+<td align="left">Check</td>
+<td align="left">JDK 8: -XX:+PrintGCDetails -XX:+PrintGCDateStamps -Xloggc:{file-path}<br/> JDK9+: -Xlog:gc*:file={file-path}<br/> <a href="https://dzone.com/articles/7-jvm-arguments-of-highly-effective-applications-1">https://dzone.com/articles/7-jvm-arguments-of-highly-effective-applications-1</a></td>
+</tr>
+<tr>
+<td align="left">=======================================</td>
+<td align="left">==============</td>
+<td align="left">================================================================================</td>
+</tr>
+</tbody>
+</table>
+
+  <br>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../visual-studio/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../visual-studio/" class="btn btn-xs btn-link">
+        Visual Studio Code
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../java-and-java-performance-optimization/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../java-and-java-performance-optimization/" class="btn btn-xs btn-link">
+        Java Memory Management & Java Performance Optimization
+      </a>
+    </div>
+    
+  </div>
+
+    <br>
+</div>
+
+<footer class="col-md-12 wm-page-content">
+      <p>
+        <a href="https://github.com/melvinpetix/library/edit/master/docs/jvm-parameters-matrix-table.md"><i class="fa fa-github"></i>
+Edit on GitHub</a>
+      </p><p>2020 melvinpetix™</p>
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/melvinpetix/library/">Windmill Dark</a> theme by melvinpetix (noraj).</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="author" content="melvinpetix">
+    <link rel="canonical" href="https://petixnginx.tk/library/container-managers/">
+    <link rel="shortcut icon" href="../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Container Runtimes/Managers & Base Images. Podman, Buildah & Skopeo - melvinpetix library</title>
+    <link href="../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/highlight.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "Container Runtimes/Managers, Base Images and Container Tools. Podman, Buildah &amp; Skopeo", url: "#_top", children: [
+              {title: "Introduction", url: "#introduction" },
+              {title: "OCI Project", url: "#oci-project" },
+              {title: "Container Managers / Container Runtimes (CRI runtimes)", url: "#container-managers-container-runtimes-cri-runtimes" },
+              {title: "Container Images", url: "#container-images" },
+              {title: "Container Tools", url: "#container-tools" },
+          ]},
+        ];
+
+    </script>
+    <script src="../js/base.js"></script>
+      <script src="../search/main.js"></script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../maven-gradle/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../maven-gradle/" class="btn btn-xs btn-link">
+        Maven, Gradle & SDKMAN
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../jenkins-alternatives/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../jenkins-alternatives/" class="btn btn-xs btn-link">
+        Jenkins Alternatives for Continuous Integration
+      </a>
+    </div>
+    
+  </div>
+
+    
+
+    <h1 id="container-runtimesmanagers-base-images-and-container-tools-podman-buildah-skopeo">Container Runtimes/Managers, Base Images and Container Tools. Podman, Buildah &amp; Skopeo</h1>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#oci-project">OCI Project</a><ul>
+<li><a href="#oci-runtimes">OCI Runtimes</a><ul>
+<li><a href="#runc">runc</a></li>
+<li><a href="#crun">crun</a></li>
+</ul>
+</li>
+<li><a href="#oci-monitors">OCI Monitors</a></li>
+</ul>
+</li>
+<li><a href="#container-managers--container-runtimes-cri-runtimes">Container Managers / Container Runtimes (CRI runtimes)</a><ul>
+<li><a href="#cri-o">CRI-O</a></li>
+<li><a href="#podman-pod-manager-tool">Podman. Pod Manager tool</a><ul>
+<li><a href="#containers-in-high-security-environments-with-podman">Containers In High Security Environments with Podman</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#container-images">Container Images</a><ul>
+<li><a href="#red-hat-universal-base-image">Red Hat Universal Base Image</a></li>
+</ul>
+</li>
+<li><a href="#container-tools">Container Tools</a><ul>
+<li><a href="#buildah">Buildah</a></li>
+<li><a href="#skopeo">Skopeo</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<ul>
+<li><a href="https://developers.redhat.com/blog/2018/02/22/container-terminology-practical-introduction/">A Practical Introduction to Container Terminology</a></li>
+</ul>
+<h2 id="oci-project">OCI Project</h2>
+<ul>
+<li><a href="https://www.opencontainers.org/">OCI: Open Container Initiative</a></li>
+</ul>
+<h3 id="oci-runtimes">OCI Runtimes</h3>
+<h4 id="runc">runc</h4>
+<ul>
+<li><a href="https://github.com/opencontainers/runc">runc</a> CLI tool for spawning and running containers according to the OCI specification </li>
+</ul>
+<h4 id="crun">crun</h4>
+<ul>
+<li><a href="https://github.com/giuseppe/crun">crun</a> A fast and lightweight fully featured OCI runtime and C library for running containers</li>
+</ul>
+<h3 id="oci-monitors">OCI Monitors</h3>
+<ul>
+<li><a href="https://github.com/containers/conmon">Conmon</a> An OCI container runtime monitor.</li>
+</ul>
+<h2 id="container-managers-container-runtimes-cri-runtimes">Container Managers / Container Runtimes (CRI runtimes)</h2>
+<ul>
+<li><a href="https://kubernetes.io/docs/setup/production-environment/container-runtimes/">Kubernetes.io: Container runtimes</a></li>
+<li><a href="https://www.docker.com/products/container-runtime">Docker</a></li>
+<li><a href="https://containerd.io/">containerd.io</a></li>
+<li><a href="https://github.com/kubernetes/frakti">Frakti</a></li>
+</ul>
+<h3 id="cri-o">CRI-O</h3>
+<ul>
+<li><a href="https://cri-o.io/">cri-o.io</a> Lightweight Container Runtime for Kubernetes</li>
+<li><a href="redhat.com/en/blog/why-red-hat-investing-cri-o-and-podman">Why Red Hat is investing in CRI-O and Podman</a></li>
+</ul>
+<h3 id="podman-pod-manager-tool">Podman. Pod Manager tool</h3>
+<ul>
+<li><a href="https://podman.io/">Podman.io</a></li>
+<li><a href="https://github.com/containers/libpod">Libpod: Library and tool for running OCI-based containers in Pods</a> <ul>
+<li>Libpod is a library used to create container pods. Home of Podman.</li>
+<li>Libpod provides a library for applications looking to use the Container Pod concept, popularized by Kubernetes. Libpod also contains the Pod Manager tool (Podman). Podman manages pods, containers, container images, and container volumes.</li>
+</ul>
+</li>
+<li><a href="https://developers.redhat.com/blog/2018/08/29/intro-to-podman/">Intro to Podman</a></li>
+<li><a href="https://developer.ibm.com/technologies/containers/articles/templating-and-podman-openshift/">developer.ibm.com: How templating works with Podman, Kubernetes, and Red Hat OpenShift</a></li>
+<li><a href="https://www.redhat.com/en/blog/be-careful-when-pulling-images-short-name">redhat.com: Be careful when pulling images by short name</a></li>
+<li><a href="https://developers.redhat.com/blog/2019/02/21/podman-and-buildah-for-docker-users/">developers.redhat.com: Podman and Buildah for Docker users 🌟</a></li>
+</ul>
+<h4 id="containers-in-high-security-environments-with-podman">Containers In High Security Environments with Podman</h4>
+<ul>
+<li><a href="https://www.redhat.com/en/blog/using-container-technology-make-trusted-pipeline">Build trusted pipelines/Guards with Podman containers</a> Container technology makes develoment easier/cheaper &amp; much more secure. SELinux,SECCOMP,Namespaces,Dropped Capabilities.</li>
+</ul>
+<h2 id="container-images">Container Images</h2>
+<h3 id="red-hat-universal-base-image">Red Hat Universal Base Image</h3>
+<ul>
+<li><a href="https://www.redhat.com/en/blog/introducing-red-hat-universal-base-image">Introducing the Red Hat Universal Base Image 🌟</a></li>
+<li><a href="https://developers.redhat.com/blog/2019/10/09/what-is-red-hat-universal-base-image/">What is Red Hat Universal Base Image?</a></li>
+<li><a href="https://developers.redhat.com/articles/ubi-faq/#resources">RH Universal Base Image FAQ</a></li>
+<li><a href="https://catalog.redhat.com/software/containers/explore">Red Hat Ecosystem Catalog</a></li>
+</ul>
+<h2 id="container-tools">Container Tools</h2>
+<h3 id="buildah">Buildah</h3>
+<ul>
+<li><a href="https://buildah.io/">Buildah.io</a> A tool that facilitates building <a href="https://www.opencontainers.org/">Open Container Initiative (OCI)</a> container images<ul>
+<li><a href="https://github.com/containers/buildah">github.com/containers/buildah</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="skopeo">Skopeo</h3>
+<ul>
+<li><a href="https://github.com/containers/skopeo">Skopeo</a> is a command line utility that performs various operations on container images and image repositories.</li>
+<li><a href="https://www.openshift.com/blog/promoting-container-images-between-registries-with-skopeo">Promoting container images between registries with skopeo</a></li>
+</ul>
+<p><a href="https://www.openshift.com/blog/enterprise-kubernetes-with-openshift-part-one"><img alt="OCP 4 Architecture" src="../images/ocp4_arch.png" /></a></p>
+
+  <br>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../maven-gradle/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../maven-gradle/" class="btn btn-xs btn-link">
+        Maven, Gradle & SDKMAN
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../jenkins-alternatives/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../jenkins-alternatives/" class="btn btn-xs btn-link">
+        Jenkins Alternatives for Continuous Integration
+      </a>
+    </div>
+    
+  </div>
+
+    <br>
+</div>
+
+<footer class="col-md-12 wm-page-content">
+      <p>
+        <a href="https://github.com/melvinpetix/library/edit/master/docs/container-managers.md"><i class="fa fa-github"></i>
+Edit on GitHub</a>
+      </p><p>2020 melvinpetix™</p>
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/melvinpetix/library/">Windmill Dark</a> theme by melvinpetix (noraj).</p>
+</footer>
+
+</body>
+</html>

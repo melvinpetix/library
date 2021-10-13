@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="author" content="melvinpetix">
+    <link rel="canonical" href="https://petixnginx.tk/library/Splunk/">
+    <link rel="shortcut icon" href="../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Splunk - melvinpetix library</title>
+    <link href="../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/highlight.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "SPL Syntax", url: "#_top", children: [
+              {title: "Basic Searching Concepts", url: "#basic-searching-concepts" },
+              {title: "Basic Filtering", url: "#basic-filtering" },
+              {title: "Calculations", url: "#calculations" },
+              {title: "Simple Useful Examples", url: "#simple-useful-examples" },
+              {title: "Emailing Results", url: "#emailing-results" },
+              {title: "Timecharts", url: "#timecharts" },
+          ]},
+          {title: "Index Statistics", url: "#index-statistics", children: [
+          ]},
+          {title: "Reload apps", url: "#reload-apps", children: [
+          ]},
+          {title: "Debug Traces", url: "#debug-traces", children: [
+          ]},
+          {title: "Configuration", url: "#configuration", children: [
+              {title: "Inputs", url: "#inputs" },
+              {title: "Licenses", url: "#licenses" },
+              {title: "User Management", url: "#user-management" },
+          ]},
+          {title: "Capacity Planning", url: "#capacity-planning", children: [
+          ]},
+        ];
+
+    </script>
+    <script src="../js/base.js"></script>
+      <script src="../search/main.js"></script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+
+    <h2 id="spl-syntax">SPL Syntax</h2>
+<h3 id="basic-searching-concepts">Basic Searching Concepts</h3>
+<p>Simple searches look like the following examples. Note that there are literals with 
+and without quoting and that there are data field as well as date source selections 
+done with an "=":</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Full Text Search</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Exception</code></td>
+<td>Find the word 'Exception'</td>
+</tr>
+<tr>
+<td><code>One Two Three</code></td>
+<td>Find those three words <strong>in any order</strong></td>
+</tr>
+<tr>
+<td><code>"One Two Three"</code></td>
+<td>Find the exact phrase</td>
+</tr>
+<tr>
+<td><strong>Filter by fields</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><code>source="/var/log/apache/access.log" status=500</code></td>
+<td>All lines where the field "status" has value 500 from the file /var/log/apache/access.log</td>
+</tr>
+<tr>
+<td><strong>Filter by host</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><code>host="myblog" source="/var/log/syslog" Fatal</code></td>
+<td>Give me all fatal errors from syslog of the blog host</td>
+</tr>
+<tr>
+<td><strong>Selecting an index</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><code>index="secretStuff" password</code></td>
+<td>Access a specific index and text matching 'password'</td>
+</tr>
+</tbody>
+</table>
+<h3 id="basic-filtering">Basic Filtering</h3>
+<p>Two important filters are "rex" and "regex". "rex" is for extraction a
+pattern and storing it as a new field. This is why you need to specifiy
+a named extraction group in Perl like manner "(?...)" for example</p>
+<pre><code>source="some.log" Fatal | rex "(?i) msg=(?P[^,]+)"
+</code></pre>
+<p>When running above query check the list of "interesting fields" it now
+should have an entry "FIELDNAME" listing you the top 10 fatal messages
+from "some.log" What is the difference to "regex" now? Well "regex" is
+like grep. Actually you can rephrase</p>
+<pre><code>source="some.log" Fatal
+</code></pre>
+<p>to</p>
+<pre><code>source="some.log" | regex _raw=".*Fatal.*"
+</code></pre>
+<p>and get the same result. The syntax of "regex" is simply "=". Using it
+makes sense once you want to filter for a specific field.</p>
+<h3 id="calculations">Calculations</h3>
+<p>Sum up a field and do some arithmetics:</p>
+<pre><code>... | stats sum(&lt;field&gt;) as result | eval result=(result/1000)
+</code></pre>
+<p>Determine the size of log events by checking len() of _raw. The p10()
+and p90() functions are returning the 10 and 90 percentiles:</p>
+<pre><code>| eval raw_len=len(_raw) | stats avg(raw_len), p10(raw_len), p90(raw_len) by sourcetype
+</code></pre>
+<h3 id="simple-useful-examples">Simple Useful Examples</h3>
+<p>Splunk usually auto-detects access.log fields so you can do queries
+like:</p>
+<pre><code>source="/var/log/nginx/access.log" HTTP 500
+source="/var/log/nginx/access.log" HTTP (200 or 30*)
+source="/var/log/nginx/access.log" status=404 | sort - uri 
+source="/var/log/nginx/access.log" | head 1000 | top 50 clientip
+source="/var/log/nginx/access.log" | head 1000 | top 50 referer
+source="/var/log/nginx/access.log" | head 1000 | top 50 uri
+source="/var/log/nginx/access.log" | head 1000 | top 50 method
+...
+</code></pre>
+<h3 id="emailing-results">Emailing Results</h3>
+<p>By appending "sendemail" to any query you get the result by mail!</p>
+<pre><code>... | sendemail to="john@example.com"
+</code></pre>
+<h3 id="timecharts">Timecharts</h3>
+<p>Create a timechart from a single field that should be summed up</p>
+<pre><code>... | table _time, &lt;field&gt; | timechart span=1d sum(&lt;field&gt;)
+... | table _time, &lt;field&gt;, name | timechart span=1d sum(&lt;field&gt;) by name
+</code></pre>
+<h2 id="index-statistics">Index Statistics</h2>
+<p>List All Indices</p>
+<pre><code> | eventcount summarize=false index=* | dedup index | fields index
+ | eventcount summarize=false report_size=true index=* | eval size_MB = round(size_bytes/1024/1024,2)
+ | REST /services/data/indexes | table title
+ | REST /services/data/indexes | table title splunk_server currentDBSizeMB frozenTimePeriodInSecs maxTime minTime totalEventCount
+</code></pre>
+<p>on the command line you can call</p>
+<pre><code>$SPLUNK_HOME/bin/splunk list index
+</code></pre>
+<p>To query write amount of per index the metrics.log can be used:</p>
+<pre><code>index=_internal source=*metrics.log group=per_index_thruput series=* | eval MB = round(kb/1024,2) | timechart sum(MB) as MB by series
+</code></pre>
+<p>MB per day per indexer / index</p>
+<pre><code>index=_internal metrics kb series!=_* "group=per_host_thruput" monthsago=1 | eval indexed_mb = kb / 1024 | timechart fixedrange=t span=1d sum(indexed_mb) by series | rename sum(indexed_mb) as totalmb
+
+index=_internal metrics kb series!=_* "group=per_index_thruput" monthsago=1 | eval indexed_mb = kb / 1024 | timechart fixedrange=t span=1d sum(indexed_mb) by series | rename sum(indexed_mb) as totalmb
+</code></pre>
+<h2 id="reload-apps">Reload apps</h2>
+<p>Load base URL with appended</p>
+<pre><code>/debug/refresh
+</code></pre>
+<hr />
+<hr />
+<h2 id="debug-traces">Debug Traces</h2>
+<p>You can enable traces per trace topic listed in splunkd.log. To change
+permanently edit /opt/splunk/etc/log.cfg and change the trace level from
+"INFO" to "DEBUG". Example:</p>
+<pre><code>category.TcpInputProc=DEBUG
+</code></pre>
+<p>The same can be achieved non-persistent and on-the-fly in the "System
+Settings" GUI.</p>
+<h2 id="configuration">Configuration</h2>
+<p>To list effective configuration</p>
+<pre><code>$SPLUNK_HOME/bin/splunk btool inputs list
+</code></pre>
+<p>To check configuration syntax</p>
+<pre><code>$SPLUNK_HOME/bin/splunk btool check
+</code></pre>
+<h3 id="inputs">Inputs</h3>
+<pre><code>splunk _internal call /data/inputs/tcp/raw
+splunk _internal call /data/inputs/tcp/raw -get:search sourcetype=foo
+splunk _internal call /servicesNS/nobody/search/data/inputs/tcp/raw/7092 -post:sourcetype bar -post:index bardata
+</code></pre>
+<h3 id="licenses">Licenses</h3>
+<pre><code>splunk list licenses
+</code></pre>
+<h3 id="user-management">User Management</h3>
+<p>To reload authentication config from command line:</p>
+<pre><code># At least for Splunk 6.x
+splunk _internal call /authentication/providers/services/_reload -auth admin:changeme
+
+# Older variant
+splunk _internal rpc-auth ''
+</code></pre>
+<p>To list</p>
+<pre><code>splunk _internal call /services/authentication/roles -get:search indexes_edit
+splunk _internal call /services/authentication/users -get:search john.smith
+splunk _internal call /services/authentication/users/john.smith -method DELETE
+</code></pre>
+<h2 id="capacity-planning">Capacity Planning</h2>
+<p>There is a great online calculator at
+<a href="https://splunk-sizing.appspot.com">splunk-sizing.appspot.com</a>.</p>
+
+  <br>
+    
+
+    <br>
+</div>
+
+<footer class="col-md-12 wm-page-content">
+      <p>
+        <a href="https://github.com/melvinpetix/library/edit/master/docs/Splunk.md"><i class="fa fa-github"></i>
+Edit on GitHub</a>
+      </p><p>2020 melvinpetix™</p>
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/melvinpetix/library/">Windmill Dark</a> theme by melvinpetix (noraj).</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="author" content="melvinpetix">
+    <link rel="canonical" href="https://petixnginx.tk/library/cicd/">
+    <link rel="shortcut icon" href="../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>CI/CD - Continuous Integration & Continuous Delivery - melvinpetix library</title>
+    <link href="../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/highlight.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "CI/CD", url: "#_top", children: [
+              {title: "Introduction", url: "#introduction" },
+              {title: "CI/CD Continuous Integration and Continuous Delivery", url: "#cicd-continuous-integration-and-continuous-delivery" },
+              {title: "CI/CD with Kubernetes", url: "#cicd-with-kubernetes" },
+              {title: "Reports on the Enterprise CI/CD Market", url: "#reports-on-the-enterprise-cicd-market" },
+              {title: "Awesome Lists", url: "#awesome-lists" },
+          ]},
+        ];
+
+    </script>
+    <script src="../js/base.js"></script>
+      <script src="../search/main.js"></script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../git/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../git/" class="btn btn-xs btn-link">
+        Git & Git Patterns. Trunk Devel, Git Flow & Feature Flags. Merge BOTs
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../customer/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../customer/" class="btn btn-xs btn-link">
+        Customer Success Stories
+      </a>
+    </div>
+    
+  </div>
+
+    
+
+    <h1 id="cicd">CI/CD</h1>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#cicd-continuous-integration-and-continuous-delivery">CI/CD Continuous Integration and Continuous Delivery</a></li>
+<li><a href="#cicd-with-kubernetes">CI/CD with Kubernetes</a></li>
+<li><a href="#reports-on-the-enterprise-cicd-market">Reports on the Enterprise CI/CD Market</a></li>
+<li><a href="#awesome-lists">Awesome Lists</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<ul>
+<li><a href="https://opensource.com/article/18/8/what-cicd">opensource.com: What is CI/CD?</a></li>
+<li><a href="https://en.wikipedia.org/wiki/DevOps">Wikipedia.org: DevOps</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Continuous_integration">Wikipedia.org: Continuous Integration</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Continuous_delivery">Wikipedia.org: Continuous Delivery</a></li>
+</ul>
+<p><center>
+<a href="https://www.thoughtworks.com/insights/continuous-delivery"><img alt="CD Artifact Management" src="../images/cd-artifact-management.jpg" /></a>
+</center></p>
+<h2 id="cicd-continuous-integration-and-continuous-delivery">CI/CD Continuous Integration and Continuous Delivery</h2>
+<ul>
+<li><a href="https://dzone.com/refcardz/continuous-integration-servers">DZone: Continuous Integration: Servers and Tools</a> Learning to Utilize DevOps with Servers and Tools</li>
+<li><a href="https://sdtimes.com/devops/ci-cd-pipelines-are-expanding/">sdtimes.com: CI/CD pipelines are expanding 🌟</a> The “basic” CI/CD pipeline includes five processes, which are: merge, build, test, package and deploy. All of these are individually defined so readers have a common reference point. The basic pipeline includes sub-pipelines associated with each step, such as moving artifacts from a build into a repository.</li>
+<li><a href="https://www.devopsonline.co.uk/chatops-devops-scrumops-and-5-other-ops-religions/">devopsonline.co.uk: ChatOps, DevOps, ScrumOps and 5 Other Ops religions</a></li>
+<li><a href="https://opensource.com/article/19/4/devops-pipeline">opensource.com: A beginner's guide to building DevOps pipelines with open source tools</a> If you're new to DevOps, check out this five-step process for building your first pipeline.</li>
+<li><a href="https://info.acloud.guru/resources/brazeal-how-your-org-predicts-your-ci/cd-pipeline">acloud.guru: How youtr org predicts your CI/CD pipeline</a></li>
+<li><a href="https://dev.to/semaphore/ci-cd-continuous-integration-delivery-explained-75l">dev.to: CI/CD Continuous Integration &amp; Delivery Explained 🌟🌟</a></li>
+<li><a href="https://www.mindtheproduct.com/what-the-hell-are-ci-cd-and-devops-a-cheatsheet-for-the-rest-of-us/">mindtheproduct.com: The Product Managers’ Guide to Continuous Delivery and DevOps 🌟🌟</a></li>
+<li><a href="https://tech.buzzfeed.com/continuous-deployments-at-buzzfeed-d171f76c1ac4">tech.buzzfeed.com: Continuous Deployments at BuzzFeed</a></li>
+<li><a href="https://dzone.com/refcardz/continuous-delivery-patterns">Dzone refcard: Continuous Delivery - Patterns and Anti-Patterns in the Software Lifecycle 🌟</a></li>
+<li><a href="https://www.infoworld.com/article/3271126/what-is-cicd-continuous-integration-and-continuous-delivery-explained.html">infoworld.com: What is CI/CD? Continuous integration and continuous delivery explained</a> The CI/CD pipeline is one of the best practices for devops teams to implement, for delivering code changes more frequently and reliably</li>
+<li><a href="https://devops.com/how-to-implement-an-effective-ci-cd-pipeline/">devops.com: How to Implement an Effective CI/CD Pipeline</a></li>
+<li><a href="https://www.ammeon.com/5-tips-for-building-ci-cd-pipeline/">ammeon.com: 5 Tips For Building A CI/CD Pipeline</a></li>
+</ul>
+<h2 id="cicd-with-kubernetes">CI/CD with Kubernetes</h2>
+<ul>
+<li><a href="https://blog.sonatype.com/achieving-ci/cd-with-kubernetes">blog.sonatype.com: Achieving CI and CD With Kubernetes 🌟</a></li>
+<li><a href="https://thenewstack.io/7-features-that-make-kubernetes-ideal-for-ci-cd/">thenewstack.io: 7 features that make kubernetes ideal for CI/CD</a></li>
+<li><a href="https://thenewstack.io/ebooks/kubernetes/ci-cd-with-kubernetes/">thenewstack.io: CI/CD with kubernetes 🌟</a></li>
+</ul>
+<h2 id="reports-on-the-enterprise-cicd-market">Reports on the Enterprise CI/CD Market</h2>
+<ul>
+<li><a href="https://jfrog.com/whitepaper/gigaom-radar-for-enterprise-ci-cd/">GigaOm's Radar for Enterprise CI/CD 🌟</a> is a must-see report for any DevOps enthusiast. The goal of an end-to-end Continuous Integration/Continuous Delivery (CI/CD) pipeline is to deliver software-based innovation and business value at both speed and scale. CI/CD plays a very important role in the company's DevOps journey. Keeping several factors in mind, Gigaom has come up with it'sown research and presented who leads and who lags in the CI/CD market.</li>
+</ul>
+<p><a href="https://jfrog.com/whitepaper/gigaom-radar-for-enterprise-ci-cd/"><img alt="gigaom cicd radar" src="../images/gigaom_cicd_radar.jpg" /></a></p>
+<h2 id="awesome-lists">Awesome Lists</h2>
+<ul>
+<li><a href="https://github.com/cicdops/awesome-ciandcd">Awesome CI/CD 🌟</a></li>
+</ul>
+<p><center></p>
+<iframe src="https://www.youtube.com/embed/N8R3-eNVoEc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<p></center>
+<center></p>
+<iframe src="https://www.youtube.com/embed/65BnTLcDAJI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<p></center></p>
+
+  <br>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../git/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../git/" class="btn btn-xs btn-link">
+        Git & Git Patterns. Trunk Devel, Git Flow & Feature Flags. Merge BOTs
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../customer/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../customer/" class="btn btn-xs btn-link">
+        Customer Success Stories
+      </a>
+    </div>
+    
+  </div>
+
+    <br>
+</div>
+
+<footer class="col-md-12 wm-page-content">
+      <p>
+        <a href="https://github.com/melvinpetix/library/edit/master/docs/cicd.md"><i class="fa fa-github"></i>
+Edit on GitHub</a>
+      </p><p>2020 melvinpetix™</p>
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/melvinpetix/library/">Windmill Dark</a> theme by melvinpetix (noraj).</p>
+</footer>
+
+</body>
+</html>

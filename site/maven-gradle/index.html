@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="author" content="melvinpetix">
+    <link rel="canonical" href="https://petixnginx.tk/library/maven-gradle/">
+    <link rel="shortcut icon" href="../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Maven, Gradle & SDKMAN - melvinpetix library</title>
+    <link href="../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/highlight.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "Maven &amp; Gradle", url: "#_top", children: [
+              {title: "Apache Maven", url: "#apache-maven" },
+              {title: "Gradle", url: "#gradle" },
+          ]},
+        ];
+
+    </script>
+    <script src="../js/base.js"></script>
+      <script src="../search/main.js"></script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../sonarqube/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../sonarqube/" class="btn btn-xs btn-link">
+        SonarQube
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../container-managers/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../container-managers/" class="btn btn-xs btn-link">
+        Container Runtimes/Managers & Base Images. Podman, Buildah & Skopeo
+      </a>
+    </div>
+    
+  </div>
+
+    
+
+    <h1 id="maven-gradle">Maven &amp; Gradle</h1>
+<ul>
+<li><a href="#apache-maven">Apache Maven</a><ul>
+<li><a href="#scaffolding-a-project-with-maven-maven-archetype">Scaffolding a project with Maven (maven archetype)</a></li>
+<li><a href="#maven-tests">Maven Tests</a></li>
+<li><a href="#dependency-resolution-in-maven">Dependency Resolution in Maven</a></li>
+<li><a href="#maven-and-docker">Maven and Docker</a></li>
+<li><a href="#ides">IDEs</a><ul>
+<li><a href="#intellij-idea">Intellij IDEA</a></li>
+</ul>
+</li>
+<li><a href="#maven-plugins">Maven Plugins</a></li>
+<li><a href="#maven-cheat-sheets">Maven Cheat Sheets</a></li>
+<li><a href="#other-commands">Other Commands</a></li>
+<li><a href="#fabric8-maven-plugin">Fabric8 Maven Plugin</a></li>
+</ul>
+</li>
+<li><a href="#gradle">Gradle</a><ul>
+<li><a href="#gradle-cheat-sheets">Gradle Cheat Sheets</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="apache-maven">Apache Maven</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Apache_Maven">Wikipedia.org: Apache Maven</a></li>
+<li><a href="https://maven.apache.org/">maven.apache.org</a></li>
+<li><a href="https://twitter.com/ASFMavenProject">twitter.com/ASFMavenProject: The official twitter feed of the Apache Maven Project</a></li>
+<li><a href="https://twitter.com/ASFMavenRelease">twitter.com/ASFMavenRelease: Maven Plugin Release</a> Tweets of plugin releases</li>
+<li><a href="https://dzone.com/articles/starting-with-apache-maven">Dzone.com: Starting with Apache Maven</a></li>
+<li><a href="https://dzone.com/articles/maven-demystified">Dzone.com: Maven Demystified</a></li>
+<li><a href="https://dzone.com/articles/create-maven-archetype-1">Dzone.com: Creating a Maven Archetype</a></li>
+<li><a href="https://dzone.com/asset/download/212">Dzone refcard: Apache Maven 2</a></li>
+<li><a href="https://dzone.com/asset/download/223">Dzone refcard: Getting Started with Maven Repository Management</a></li>
+<li><a href="https://dzone.com/articles/installing-maven">Dzone: Installing Maven With Your JDK</a></li>
+<li><a href="https://dzone.com/articles/10-effective-tips-on-using-maven">Dzone: 10 Effective Tips on Using Maven</a></li>
+<li><a href="https://dzone.com/articles/building-java-applications-with-maven">Dzone: Building Java Applications With Maven</a></li>
+<li><a href="https://howtodoinjava.com/maven/">howtodoinjava.com/maven</a></li>
+</ul>
+<h3 id="scaffolding-a-project-with-maven-maven-archetype">Scaffolding a project with Maven (maven archetype)</h3>
+<ul>
+<li><a href="https://www.vogella.com/tutorials/ApacheMaven/article.html">vogella.com: Maven for Building Java application - Tutorial</a></li>
+<li><a href="http://maven.apache.org/guides/introduction/introduction-to-the-standard-directory-layout.html">maven.apache.org: Introduction to the Standard Directory Layout</a></li>
+<li><a href="http://www.programmersought.com/article/1858176023/">Handwritten Maven archetype project scaffolding</a></li>
+<li><a href="https://programmer.ink/think/maven-scaffolding-best-practices.html">programmer.ink: Maven scaffolding best practices</a></li>
+<li><a href="http://fuse.labs.osecloud.com/fuse/creating-a-microservices-project-with-maven/">Create the scaffolding for your microservice</a> We will use an existing maven archetype that assembles a CDI-based Camel java project that we will then alter to implement the service.</li>
+</ul>
+<h3 id="maven-tests">Maven Tests</h3>
+<ul>
+<li><a href="https://dzone.com/articles/maven-skipping-tests">Dzone: Maven Skipping Tests</a></li>
+<li><a href="https://dzone.com/articles/integration-tests-with-maven">Dzone: Integration Tests with Maven</a></li>
+<li><a href="https://dzone.com/articles/running-cucumber-with-maven">Dzone.com: Running Cucumber with Maven</a></li>
+</ul>
+<h3 id="dependency-resolution-in-maven">Dependency Resolution in Maven</h3>
+<ul>
+<li><a href="https://maven.apache.org/shared/maven-dependency-analyzer/index.html">Apache Maven Dependency Analyzer</a></li>
+<li><a href="https://dzone.com/articles/solving-dependency-conflicts-in-maven">Dzone.com: Solving Dependency conflicts in maven</a></li>
+<li><a href="https://dzone.com/articles/taming-maven-transitive-dependency-pitfalls">Dzone.com: Taming Maven: Transitive Dependency Pitfalls</a></li>
+<li><a href="https://dzone.com/articles/maven-dependency-management-without-going-full-mav">Dzone.com: Maven Dependency Management Without Going Full Maven</a> If you like using Maven to manage your projects, check out the MyEclipse IDE with its dependencies only mode, allowing you to take advantage of just this feature</li>
+</ul>
+<pre><code>mvn dependency:analyze  (shows you the usage of listed and unlisted dependencies)
+mvn dependency:resolve  (give me a list of everything I have declared, a nice way to avoid reading the POM file)
+mvn dependency:tree     (how you got something on your classpath)
+</code></pre>
+<h3 id="maven-and-docker">Maven and Docker</h3>
+<ul>
+<li><a href="https://dzone.com/articles/meet-the-docker-maven-plugin">Dzone: Meet the Docker Maven Plugin!</a> </li>
+</ul>
+<h3 id="ides">IDEs</h3>
+<ul>
+<li><a href="https://dzone.com/articles/maven-eclipse-and-java-9">Dzone: Maven, Eclipse, and Java 9</a> Eclipse users who use Maven are used to the M2E plugin issue of having your JRE reset on you. But there's an additional gotcha between Java 8 and Java 9. </li>
+<li><a href="https://code.visualstudio.com/docs/java/java-project">code.visualstudio.com: Java Project Management in VS Code</a></li>
+<li><a href="https://medium.com/habasconchocos/instalaci%C3%B3n-de-java-y-visual-studio-code-en-plataformas-windows-1fa47a69497f">medium.com: Instalación de Java y Visual Studio Code en plataformas Windows</a></li>
+</ul>
+<h4 id="intellij-idea">Intellij IDEA</h4>
+<ul>
+<li><a href="https://www.jetbrains.com/help/idea/maven-support.html">jetbrains.com/help/idea/maven-support.html</a></li>
+<li><a href="https://dzone.com/articles/importing-a-maven-project-in-intellij-idea">Dzone: Maven IntelliJ Idea Project</a></li>
+<li><a href="https://vaadin.com/learn/tutorials/import-maven-project-intellij-idea">vaadin.com/learn/tutorials/import-maven-project-intellij-idea</a></li>
+<li><a href="https://javaspringvaadin.wordpress.com/2018/05/22/mavenintellijidea/">javaspringvaadin.wordpress.com: Crea un Proyecto Maven desde el IDE IntelliJ IDEA</a></li>
+<li><a href="https://howtodoinjava.com/maven/how-to-convert-maven-java-project-to-intellij-idea-project/">howtodoinjava.com: Maven IntelliJ Idea Project</a></li>
+</ul>
+<h3 id="maven-plugins">Maven Plugins</h3>
+<ul>
+<li><a href="https://maven.apache.org/plugins/maven-changelog-plugin/">Apache Maven Changelog Plugin</a></li>
+<li><a href="https://maven.apache.org/plugins/maven-checkstyle-plugin/">Apache Maven Checkstyle Plugin</a></li>
+<li><a href="https://maven.apache.org/plugins/maven-javadoc-plugin/">Apache Maven Javadoc Plugin</a></li>
+<li><a href="https://maven.apache.org/surefire/maven-surefire-report-plugin/">Maven Surefire Report Plugin</a></li>
+</ul>
+<h3 id="maven-cheat-sheets">Maven Cheat Sheets</h3>
+<ul>
+<li><a href="../cheatsheets/">Maven Cheat Sheets</a></li>
+</ul>
+<h3 id="other-commands">Other Commands</h3>
+<ul>
+<li>Display contents of a jar file:</li>
+</ul>
+<pre><code class="language-bash">jar tf target/example-1.0.0-SNAPSHOT.jar
+</code></pre>
+<h3 id="fabric8-maven-plugin">Fabric8 Maven Plugin</h3>
+<ul>
+<li><a href="https://developers.redhat.com/blog/2020/05/28/how-the-fabric8-maven-plug-in-deploys-java-applications-to-openshift/">developers.redhat.com: How the fabric8 Maven plug-in deploys Java applications to OpenShift</a></li>
+</ul>
+<h2 id="gradle">Gradle</h2>
+<ul>
+<li><a href="https://gradle.org/">gradle.org</a></li>
+<li><a href="https://docs.gradle.org/current/userguide/getting_started.html">docs.gradle.org: Getting Started</a></li>
+<li><a href="https://dzone.com/articles/refined-gradle">Dzone: "Refined" Gradle</a></li>
+<li><a href="https://dzone.com/articles/simplify-your-script-build-with-gradle">Dzone: simplify your script build with gradle</a></li>
+<li><a href="https://dzone.com/articles/build-a-java-app-with-gradle">Dzone: build a java app with gradle</a></li>
+<li><a href="https://develosapiens.wordpress.com/2015/05/08/playing-with-gradle/">Playing with gradle</a></li>
+</ul>
+<h3 id="gradle-cheat-sheets">Gradle Cheat Sheets</h3>
+<ul>
+<li><a href="../cheatsheets/">Gradle Cheat Sheets</a></li>
+</ul>
+
+  <br>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../sonarqube/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../sonarqube/" class="btn btn-xs btn-link">
+        SonarQube
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../container-managers/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../container-managers/" class="btn btn-xs btn-link">
+        Container Runtimes/Managers & Base Images. Podman, Buildah & Skopeo
+      </a>
+    </div>
+    
+  </div>
+
+    <br>
+</div>
+
+<footer class="col-md-12 wm-page-content">
+      <p>
+        <a href="https://github.com/melvinpetix/library/edit/master/docs/maven-gradle.md"><i class="fa fa-github"></i>
+Edit on GitHub</a>
+      </p><p>2020 melvinpetix™</p>
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/melvinpetix/library/">Windmill Dark</a> theme by melvinpetix (noraj).</p>
+</footer>
+
+</body>
+</html>

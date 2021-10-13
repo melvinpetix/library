@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="author" content="melvinpetix">
+    <link rel="canonical" href="https://petixnginx.tk/library/sonarqube/">
+    <link rel="shortcut icon" href="../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>SonarQube - melvinpetix library</title>
+    <link href="../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/highlight.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "Sonarqube", url: "#_top", children: [
+              {title: "Introduction", url: "#introduction" },
+              {title: "Analyzing Code with SonarQube", url: "#analyzing-code-with-sonarqube" },
+              {title: "Integrations", url: "#integrations" },
+              {title: "SonarQube on Kubernetes", url: "#sonarqube-on-kubernetes" },
+              {title: "SonarQube Scanners", url: "#sonarqube-scanners" },
+          ]},
+        ];
+
+    </script>
+    <script src="../js/base.js"></script>
+      <script src="../search/main.js"></script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../nexus-jfrog/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../nexus-jfrog/" class="btn btn-xs btn-link">
+        Nexus & JFrog Artifactory
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../maven-gradle/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../maven-gradle/" class="btn btn-xs btn-link">
+        Maven, Gradle & SDKMAN
+      </a>
+    </div>
+    
+  </div>
+
+    
+
+    <h1 id="sonarqube">Sonarqube</h1>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#analyzing-code-with-sonarqube">Analyzing Code with SonarQube</a></li>
+<li><a href="#integrations">Integrations</a></li>
+<li><a href="#sonarqube-on-kubernetes">SonarQube on Kubernetes</a><ul>
+<li><a href="#gcp-kubernetes">GCP Kubernetes</a></li>
+</ul>
+</li>
+<li><a href="#sonarqube-scanners">SonarQube Scanners</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/SonarQube">wikipedia: SonarQube</a></li>
+<li><a href="https://www.sonarqube.org/">Sonarqube.org</a></li>
+<li><a href="https://dzone.com/articles/why-sonarqube-1">Dzone: Why SonarQube</a></li>
+</ul>
+<h2 id="analyzing-code-with-sonarqube">Analyzing Code with SonarQube</h2>
+<ul>
+<li><a href="https://dzone.com/articles/how-quickly-get-started-sonar">Dzone: How to quickly get started with Sonar</a></li>
+<li><a href="https://dzone.com/articles/how-to-analyze-your-code-quality-in-10-minutes-wit">Dzone: How to analyze your code quality in 10 minutes</a></li>
+<li><a href="https://dzone.com/articles/sonarqube-scanning-in-15-minutes-2">Dzone: Sonarqube scanning in 15 minutes</a></li>
+<li><a href="https://dzone.com/articles/quick-start-witj-sonarqube-for-static-code-analysi">Dzone: Quick start with sonarqube for static code analysis</a></li>
+<li><a href="https://dzone.com/articles/code-analysis-with-sonarqube-part-1-setup">Dzone.com: Code Analysis Part 1 - Analyzing Code with SonarQube</a></li>
+<li><a href="https://dzone.com/articles/code-analysis-part-2-analyzing-code-with-sonarqube">Dzone.com: Code Analysis Part 2 - Analyzing Code with SonarQube</a></li>
+</ul>
+<h2 id="integrations">Integrations</h2>
+<ul>
+<li><a href="https://www.sonarqube.org/bitbucket-integration/">sonarqube.org: Bitbucket integration</a> Eliminate Bugs and Vulnerabilities
+in your Bitbucket repositories</li>
+<li><a href="https://dzone.com/articles/sonarcloud-integration-with-springboot-maven">Dzone: SonarCloud integration with SpringBoot Maven</a></li>
+</ul>
+<h2 id="sonarqube-on-kubernetes">SonarQube on Kubernetes</h2>
+<ul>
+<li><a href="https://medium.com/@akamenev/running-sonarqube-on-azure-kubernetes-92a1b9051120">Running SonarQube on Kubernetes</a></li>
+<li><a href="https://www.katacoda.com/javajon/courses/kubernetes-pipelines/sonarqube">Katacoda.com: SonarQube on Kubernetes</a></li>
+<li><a href="https://hub.helm.sh/charts/oteemo/sonarqube">hub.helm.sh/charts/oteemo/sonarqube</a></li>
+<li><a href="https://www.youtube.com/watch?v=_cT-kkvw3NQ">youtube: Installation of Sonarqube on Kubernetes/Minikube</a><ul>
+<li><a href="https://github.com/gudpick/pods">github ref1</a></li>
+<li><a href="https://github.com/gudpick/pods/tree/master/sonar-latest">github ref2</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="gcp-kubernetes">GCP Kubernetes</h3>
+<ul>
+<li><a href="https://github.com/GoogleCloudPlatform/click-to-deploy/tree/master/k8s/sonarqube">click-to-deploy/sonarqube</a></li>
+<li><a href="https://www.solstice.com/fwd/sonarqube-gcp-kubernetes">Installing SonarQube on GCP using Kubernetes</a></li>
+</ul>
+<h2 id="sonarqube-scanners">SonarQube Scanners</h2>
+<ul>
+<li><a href="https://docs.sonarqube.org/latest/analysis/overview/">SonarQube Scanner Overview</a><ul>
+<li><a href="https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-gradle/">Gradle - SonarScanner for Gradle</a></li>
+<li><a href="https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-msbuild/">MSBuild - SonarScanner for MSBuild</a></li>
+<li><a href="https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-maven/">Maven - use the SonarScanner for Maven</a></li>
+<li><a href="https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-jenkins/">Jenkins - SonarScanner for Jenkins. SonarQube plugin for Jenkins with declarative pipeline 🌟</a></li>
+<li><a href="https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-azure-devops/">Azure DevOps - SonarQube Extension for Azure DevOps</a></li>
+<li><a href="https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-ant/">Ant - SonarScanner for Ant</a></li>
+<li><a href="https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/">anything else (CLI) - SonarScanner</a></li>
+</ul>
+</li>
+</ul>
+
+  <br>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../nexus-jfrog/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../nexus-jfrog/" class="btn btn-xs btn-link">
+        Nexus & JFrog Artifactory
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../maven-gradle/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../maven-gradle/" class="btn btn-xs btn-link">
+        Maven, Gradle & SDKMAN
+      </a>
+    </div>
+    
+  </div>
+
+    <br>
+</div>
+
+<footer class="col-md-12 wm-page-content">
+      <p>
+        <a href="https://github.com/melvinpetix/library/edit/master/docs/sonarqube.md"><i class="fa fa-github"></i>
+Edit on GitHub</a>
+      </p><p>2020 melvinpetix™</p>
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/melvinpetix/library/">Windmill Dark</a> theme by melvinpetix (noraj).</p>
+</footer>
+
+</body>
+</html>

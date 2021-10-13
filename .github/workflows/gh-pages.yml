@@ -1,0 +1,38 @@
+name: build and deploy mkdocs to github pages. 
+on:
+  push:
+    branches:
+      - dev
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: "recursive" 
+          fetch-depth: 0       # Fetch all history for .GitInfo and .Lastmod
+      - name: Setup Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: '3.7'
+          architecture: 'x64'
+      - name: Install dependencies
+        run: |
+          python3 -m pip uninstall mkdocs-bootswatch
+          python3 -m pip uninstall windmill-dark 
+          python3 -m pip uninstall bootstrap
+          python3 -m pip uninstall bootstrap4
+          python3 -m pip uninstall mkdocs-bootstrap
+          python3 -m pip uninstall mkdocs-bootstrap4
+          python3 -m pip uninstall mkdocs
+          python3 -m pip install mkdocs
+          python3 -m pip install mkdocs-bootswatch
+          python3 -m pip install --upgrade pip                    
+          
+      - name: Build site
+        run: mkdocs build
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          publish_dir: ./site
+          PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}

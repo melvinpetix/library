@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="author" content="melvinpetix">
+    <link rel="canonical" href="https://petixnginx.tk/library/serverless/">
+    <link rel="shortcut icon" href="../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Serverless Architectures & Frameworks. OpenFaaS, Knative & Kubeless - melvinpetix library</title>
+    <link href="../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/highlight.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "Serverless Architectures and Frameworks", url: "#_top", children: [
+              {title: "Serverless Architectures", url: "#serverless-architectures" },
+              {title: "Serverless Framework (the most popular serverless ecosystem)", url: "#serverless-framework-the-most-popular-serverless-ecosystem" },
+              {title: "Orchestrators of Functions on Kubernetes (aka Kubernetes Native Serverless Frameworks or FaaS Providers)", url: "#orchestrators-of-functions-on-kubernetes-aka-kubernetes-native-serverless-frameworks-or-faas-providers" },
+              {title: "Popular Deployment Frameworks for AWS Lambda", url: "#popular-deployment-frameworks-for-aws-lambda" },
+          ]},
+        ];
+
+    </script>
+    <script src="../js/base.js"></script>
+      <script src="../search/main.js"></script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../finops/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../finops/" class="btn btn-xs btn-link">
+        FinOps - Cloud Financial Management
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../noops/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../noops/" class="btn btn-xs btn-link">
+        NoOps
+      </a>
+    </div>
+    
+  </div>
+
+    
+
+    <h1 id="serverless-architectures-and-frameworks">Serverless Architectures and Frameworks</h1>
+<ul>
+<li><a href="#serverless-architectures">Serverless Architectures</a><ul>
+<li><a href="#faas-function-as-a-service">FaaS: Function as a Service</a></li>
+<li><a href="#serverless-ecosystems-comparison">Serverless Ecosystems Comparison</a></li>
+</ul>
+</li>
+<li><a href="#serverless-framework-the-most-popular-serverless-ecosystem">Serverless Framework (the most popular serverless ecosystem)</a></li>
+<li><a href="#orchestrators-of-functions-on-kubernetes-aka-kubernetes-native-serverless-frameworks-or-faas-providers">Orchestrators of Functions on Kubernetes (aka Kubernetes Native Serverless Frameworks or FaaS Providers)</a><ul>
+<li><a href="#openfaas">OpenFaaS</a></li>
+<li><a href="#knative">Knative</a><ul>
+<li><a href="#openshift-serverless-with-knative">OpenShift Serverless with Knative</a></li>
+</ul>
+</li>
+<li><a href="#kubeless">Kubeless</a></li>
+<li><a href="#openwhisk">OpenWhisk</a></li>
+</ul>
+</li>
+<li><a href="#popular-deployment-frameworks-for-aws-lambda">Popular Deployment Frameworks for AWS Lambda</a></li>
+</ul>
+<h2 id="serverless-architectures">Serverless Architectures</h2>
+<ul>
+<li><a href="https://martinfowler.com/articles/serverless.html">martinfowler.com: Serverless Architectures</a></li>
+<li><a href="https://developers.redhat.com/topics/serverless-architecture/">developers.redhat.com: Serverless Architecture</a></li>
+<li><a href="https://itnext.io/scaling-my-app-serverless-vs-kubernetes-cdb8adf446e1">itnext.io: Scaling My App: Serverless vs Kubernetes 🌟</a></li>
+<li><a href="https://www.serverless.com/learn/comparisons/">serverless.com: Comparisons - Serverless vs. other tools</a></li>
+<li><a href="https://towardsdatascience.com/kubernetes-serverless-differences-84699f370609">Is Serverless The End Of Kubernetes?</a> A comparison of both technologies to stop the debate about what is better.</li>
+</ul>
+<h3 id="faas-function-as-a-service">FaaS: Function as a Service</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Function_as_a_service">wikipedia: FaaS Function as a Service</a></li>
+<li><a href="https://www.redhat.com/en/topics/cloud-native-apps/what-is-faas">redhat.com: What is Function-as-a-Service (FaaS)?</a></li>
+<li><a href="https://stackify.com/function-as-a-service-serverless-architecture/">stackify.com: What Is Function-as-a-Service? Serverless Architectures Are Here!</a></li>
+</ul>
+<h3 id="serverless-ecosystems-comparison">Serverless Ecosystems Comparison</h3>
+<ul>
+<li><a href="https://fauna.com/blog/comparison-faas-providers">fauna.com: How does FaaS compare to PaaS and CaaS. A Comparison of Serverless Function (FaaS) Providers</a></li>
+<li><a href="https://techbeacon.com/enterprise-it/essential-guide-2019-serverless-ecosystem">techbeacon.com: An essential guide to the 2019 serverless ecosystem</a> The Serverless Framework, the most popular option, offers integrations with all major platform providers. Others to consider include (in alphabetical order): Architect (Node, AWS), Chalice (Python, AWS), Claudia.js (Node, AWS), Dawson (Node, AWS), DEEP (Node, AWS), Flogo (Go, AWS), Lambada Framework (Java, AWS), Python-Lambda (Python, AWS), Pulumi (Node/Python/Go, AWS/Azure/GCP/Kubernetes), Shep (Node, AWS), Sparta (Go, AWS), Spring Cloud Function (Java, AWS/Azure/OpenWhisk), and Zappa (Python, AWS).</li>
+</ul>
+<h2 id="serverless-framework-the-most-popular-serverless-ecosystem">Serverless Framework (the most popular serverless ecosystem)</h2>
+<ul>
+<li><a href="https://www.serverless.com/">serverless.com: Serverless Framework</a></li>
+</ul>
+<h2 id="orchestrators-of-functions-on-kubernetes-aka-kubernetes-native-serverless-frameworks-or-faas-providers">Orchestrators of Functions on Kubernetes (aka Kubernetes Native Serverless Frameworks or FaaS Providers)</h2>
+<ul>
+<li><a href="https://epsagon.com/blog/serverless-open-source-frameworks-openfaas-knative-more/">epsagon.com: Serverless Open-Source Frameworks: <strong>OpenFaaS</strong>, <strong>Knative</strong>, &amp; More 🌟</a></li>
+<li><a href="https://winderresearch.com/a-comparison-of-serverless-frameworks-for-kubernetes-openfaas-openwhisk-fission-kubeless-and-more/">winderresearch.com: A Comparison of Serverless Frameworks for Kubernetes: OpenFaas, OpenWhisk, Fission, Kubeless and more</a></li>
+<li><a href="https://vshn.ch/en/blog/a-very-quick-comparison-of-kubernetes-serverless-frameworks/">vshn.ch: A (Very!) Quick Comparison of Kubernetes Serverless Frameworks</a></li>
+</ul>
+<h3 id="openfaas">OpenFaaS</h3>
+<ul>
+<li><a href="https://www.openfaas.com/">OpenFaaS</a></li>
+<li><a href="https://itnext.io/deploy-your-first-serverless-function-to-kubernetes-232307f7b0a9">itnext.io: Deploy your first Serverless Function to Kubernetes</a></li>
+<li><a href="https://www.magalix.com/blog/implementing-faas-in-kubernetes-using-kubeless">magalix.com: Implementing FaaS in Kubernetes Using Kubeless</a></li>
+<li><a href="https://itnext.io/kubernetes-apps-the-easy-way-f06d9e5cad3c">itnext.io: <strong>arkade</strong> by example — Kubernetes apps, the easy way 🌟</a></li>
+<li><a href="https://www.xenonstack.com/blog/serverless-openfaas-java/">xenonstack.com: Serverless Architecture with OpenFaaS and Java</a></li>
+<li><a href="https://dzone.com/articles/getting-started-with-the-openfaas-kubernetes-opera">dzone: Getting Started with the OpenFaaS Kubernetes Operator on EKS 🌟</a></li>
+</ul>
+<h3 id="knative">Knative</h3>
+<ul>
+<li><a href="https://knative.dev/">knative.dev</a></li>
+<li><a href="https://www.redhat.com/en/topics/microservices/what-is-knative">redhat.com: What is knative?</a></li>
+<li><a href="https://www.datacenterknowledge.com/open-source/explaining-knative-project-liberate-serverless-cloud-giants">datacenterknowledge.com: Explaining Knative, the Project to Liberate Serverless from Cloud Giants</a></li>
+</ul>
+<h4 id="openshift-serverless-with-knative">OpenShift Serverless with Knative</h4>
+<ul>
+<li><a href="https://www.openshift.com/learn/topics/serverless">OpenShift Serverless</a></li>
+<li><a href="https://developers.redhat.com/blog/2020/04/24/build-and-deploy-a-serverless-app-with-camel-k-and-red-hat-openshift-serverless-1-5-0-tech-preview/">developers.redhat.com: Build and deploy a serverless app with Camel K and Red Hat OpenShift Serverless 1.5.0 Tech Preview</a></li>
+</ul>
+<h3 id="kubeless">Kubeless</h3>
+<ul>
+<li><a href="https://kubeless.io/">kubeless.io</a></li>
+<li><a href="https://medium.com/@peiruwang/serverless-build-a-serverless-simple-flask-application-with-kubeless-on-top-of-kubernetes-95c6682c3750">medium.com: Serverless - Build a Serverless Simple Flask Application with Kubeless on top of Kubernetes</a></li>
+</ul>
+<h3 id="openwhisk">OpenWhisk</h3>
+<ul>
+<li><a href="https://openwhisk.apache.org/">openwhisk.apache.org</a></li>
+</ul>
+<h2 id="popular-deployment-frameworks-for-aws-lambda">Popular Deployment Frameworks for AWS Lambda</h2>
+<ul>
+<li><a href="https://lumigo.io/blog/comparison-of-lambda-deployment-frameworks/">lumigo.io: AWS Lambda Deployment Frameworks Compared</a></li>
+</ul>
+<p><a href="https://www.xenonstack.com/blog/serverless-openfaas-java/"><img alt="Serverless" src="../images/from-monolith-to-serverless.jpg" /></a> </p>
+
+  <br>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../finops/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../finops/" class="btn btn-xs btn-link">
+        FinOps - Cloud Financial Management
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../noops/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../noops/" class="btn btn-xs btn-link">
+        NoOps
+      </a>
+    </div>
+    
+  </div>
+
+    <br>
+</div>
+
+<footer class="col-md-12 wm-page-content">
+      <p>
+        <a href="https://github.com/melvinpetix/library/edit/master/docs/serverless.md"><i class="fa fa-github"></i>
+Edit on GitHub</a>
+      </p><p>2020 melvinpetix™</p>
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/melvinpetix/library/">Windmill Dark</a> theme by melvinpetix (noraj).</p>
+</footer>
+
+</body>
+</html>

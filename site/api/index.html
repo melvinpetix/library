@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="author" content="melvinpetix">
+    <link rel="canonical" href="https://petixnginx.tk/library/api/">
+    <link rel="shortcut icon" href="../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>APIs with SOAP, REST and gRPC - melvinpetix library</title>
+    <link href="../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/highlight.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "APIs with SOAP, REST and gRPC", url: "#_top", children: [
+              {title: "APIs", url: "#apis" },
+              {title: "Motivation", url: "#motivation" },
+              {title: "Types of API Protocols", url: "#types-of-api-protocols" },
+              {title: "Comparisons", url: "#comparisons" },
+              {title: "Tools", url: "#tools" },
+              {title: "Free Web Services (Public APIs)", url: "#free-web-services-public-apis" },
+              {title: "Related", url: "#related" },
+          ]},
+        ];
+
+    </script>
+    <script src="../js/base.js"></script>
+      <script src="../search/main.js"></script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../swagger-code-generator-for-rest-apis/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../swagger-code-generator-for-rest-apis/" class="btn btn-xs btn-link">
+        Swagger code generator for REST APIs
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../storage/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../storage/" class="btn btn-xs btn-link">
+        Cloud Native Storage
+      </a>
+    </div>
+    
+  </div>
+
+    
+
+    <h1 id="apis-with-soap-rest-and-grpc">APIs with SOAP, REST and gRPC</h1>
+<ul>
+<li><a href="#apis">APIs</a></li>
+<li><a href="#motivation">Motivation</a></li>
+<li><a href="#types-of-api-protocols">Types of API Protocols</a><ul>
+<li><a href="#soap-api-protocol-simple-object-access-protocol">SOAP API Protocol (Simple Object Access Protocol)</a></li>
+<li><a href="#rest-api-protocol-representational-state-transfer">REST API Protocol (Representational State Transfer)</a><ul>
+<li><a href="#openapi-specification-originally-known-as-the-swagger-specification">OpenAPI Specification (originally known as the Swagger Specification)</a></li>
+</ul>
+</li>
+<li><a href="#rpc-api-protocol-remote-procedure-call">RPC API Protocol (Remote Procedure Call)</a><ul>
+<li><a href="#grpc">gRPC</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#comparisons">Comparisons</a><ul>
+<li><a href="#soap-vs-rest">SOAP vs REST</a></li>
+<li><a href="#rest-vs-openapi-vs-grpc">REST vs OpenAPI vs gRPC</a></li>
+</ul>
+</li>
+<li><a href="#tools">Tools</a><ul>
+<li><a href="#api-testing">API Testing</a></li>
+<li><a href="#graphql">GraphQL</a></li>
+</ul>
+</li>
+<li><a href="#free-web-services-public-apis">Free Web Services (Public APIs)</a></li>
+<li><a href="#related">Related</a></li>
+</ul>
+<h2 id="apis">APIs</h2>
+<ul>
+<li><a href="https://simple.wikipedia.org/wiki/Application_programming_interface">wikipedia: API Application Programming Interface</a></li>
+<li><a href="https://apifriends.com/api-management/what-is-an-api/">apifriends.com: What is an API?</a></li>
+<li><a href="https://www.axway.com/en/products/api-management/what-is-api-management">axway.com: What is API Management?</a></li>
+<li><a href="https://blogs.mulesoft.com/dev/api-dev/apis-versus-web-services/">mulesoft.com: APIs versus web services</a></li>
+<li><a href="https://www.youtube.com/playlist?list=PLM-7VG-sgbtBBnWb2Jc5kufgtWYEmiMAw">Youtube Playlist: Introduction to APIs</a></li>
+<li><a href="https://devdocs.io/">Devdocs.io API Documentation</a></li>
+</ul>
+<h2 id="motivation">Motivation</h2>
+<ul>
+<li><a href="https://www.zdnet.com/article/apis-published-apis-consumed-mainstream-enterprises-increasingly-behave-like-software-vendors/">APIs published, APIs consumed: mainstream enterprises increasingly behave like software vendors</a> Mainstream enterprises increasingly reach out to customers with APIs, digital services. Unlike software providers though, many still have mostly on-premises infrastructure. </li>
+</ul>
+<h2 id="types-of-api-protocols">Types of API Protocols</h2>
+<ul>
+<li><a href="https://apifriends.com/api-creation/different-types-apis/">apifriends.com: What are the different types of APIs? 🌟</a> Types of API Protocols: SOAP, REST and RPC</li>
+</ul>
+<h3 id="soap-api-protocol-simple-object-access-protocol">SOAP API Protocol (Simple Object Access Protocol)</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/SOAP">wikipedia: SOAP</a></li>
+<li><a href="https://www.geeksforgeeks.org/basics-of-soap-simple-object-access-protocol/">geeksforgeeks.org: Basics of SOAP – Simple Object Access Protocol</a></li>
+<li>For information about the latest work on SOAP and a full list of SOAP specifications refer to the <a href="https://www.w3.org/TR/">W3C Technical Reports</a></li>
+<li><a href="https://www.guru99.com/soap-simple-object-access-protocol.html">guru99.com: SOAP Web Services Tutorial: Simple Object Access Protocol. What is SOAP?</a></li>
+<li><a href="http://www.jitendrazaa.com/blog/java/create-soap-message-using-java/">jitendrazaa.com: Create SOAP message using Java</a></li>
+<li><a href="https://dzone.com/articles/creating-a-soap-web-service-with-spring-boot-start">dzone: Creating a SOAP Web Service With Spring Boot Starter Web Services</a> In this post, we cover the concepts of SOAP and REST and show you all the code you need to use SOAP web services in a Spring Boot app.</li>
+</ul>
+<h3 id="rest-api-protocol-representational-state-transfer">REST API Protocol (Representational State Transfer)</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Representational_state_transfer">wikipedia: REST</a></li>
+<li><a href="https://www.geeksforgeeks.org/rest-api-introduction/">geeksforgeeks.org: REST API (Introduction)</a></li>
+<li><a href="https://www.geeksforgeeks.org/rest-api-architectural-constraints/">geeksforgeeks.org: REST API Architectural Constraints</a></li>
+<li><a href="https://www.mulesoft.com/resources/api/restful-api">mulesoft.com: What is a RESTful API?</a></li>
+<li><a href="https://dzone.com/refcardz/rest-foundations-restful">Dzone refcard: Foundations of <strong>RESTful Architecture</strong> 🌟</a></li>
+<li><a href="https://dzone.com/articles/rest-api-tutorials">Dzone: REST API tutorials</a></li>
+</ul>
+<h4 id="openapi-specification-originally-known-as-the-swagger-specification">OpenAPI Specification (originally known as the Swagger Specification)</h4>
+<ul>
+<li><a href="https://www.openapis.org/">OpenAPI</a> evolved from the <a href="https://swagger.io/">Swagger</a> project. Swagger started out as a specification for documenting RESTful APIs. Later on, tools to generate client and server code and generating of test cases were added. While the original Swagger Specification was donated to the Linux Foundation and renamed the OpenAPI, Swagger remains one of the most widely used open-source toolsets for developing OpenAPIs.</li>
+<li><a href="https://en.wikipedia.org/wiki/OpenAPI_Specification">Wikipedia: OpenAPI Specification 🌟</a></li>
+<li><a href="https://www.openapis.org/faq">OpenAPI FAQ. What is OpenAPI Specification (OAS)? OpenAPI Specification</a> The OAS defines a standard, programming language-agnostic interface description for REST APIs, which allows both humans and computers to discover and understand the capabilities of a service without requiring access to source code, additional documentation, or inspection of network traffic.</li>
+<li><a href="https://apis.guru/openapi-directory/">apis.guru/openapi-directory: large archive of sample OpenAPI descriptions</a></li>
+</ul>
+<h3 id="rpc-api-protocol-remote-procedure-call">RPC API Protocol (Remote Procedure Call)</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Remote_procedure_call">wikipedia: RPC Remote Procedure Call</a></li>
+</ul>
+<h4 id="grpc">gRPC</h4>
+<ul>
+<li><a href="https://grpc.io/">gRPC</a></li>
+<li><a href="https://en.wikipedia.org/wiki/GRPC">wikipedia: gRPC</a></li>
+</ul>
+<h2 id="comparisons">Comparisons</h2>
+<h3 id="soap-vs-rest">SOAP vs REST</h3>
+<ul>
+<li><a href="https://www.geeksforgeeks.org/difference-between-rest-api-and-soap-api/">geeksforgeeks.org: Difference between REST API and SOAP API</a></li>
+<li><a href="https://dzone.com/articles/comprehensive-guide-rest-vs-soap">dzone: A Comprehensive Guide to REST vs. SOAP</a> Learn the primary differences between REST and SOAP APIs, each one's benefits, and when it's appropriate to use the two.</li>
+<li><a href="https://dzone.com/articles/web-services-architecture">dzone: Web Services Architecture – When to Use SOAP vs REST</a> Learn why SOAP (Simple Object Access Protocol) and REST (Representation State Transfer) are popular with developers working on system integration projects.</li>
+<li><a href="https://dzone.com/articles/comparing-restful-apis-and-soap-apis">dzone: Comparing RESTful APIs and SOAP APIs Using MuleSoft as an Example</a> </li>
+<li><a href="https://www.reply.com/solidsoft-reply/en/content/webservices-soap-and-rest-a-simple-introduction">reply.com: Web Services: SOAP and REST - A Simple Introduction</a> <ul>
+<li>SOAP is a communications protocol while REST is a set of architectural principles for data transmission.</li>
+<li>REST was designed to be a more straightforward and easy to implement alternative to heavyweight SOAP for web service access. SOAP functions well in distributed environments where REST assumes a direct point to point communication. Also, SOAP allows for services to describe themselves to clients and in some languages allows for automation. On the other hand, REST is fast as less processing is required, uses less bandwidth and is closer to technologies used in web design. </li>
+<li>The choice on which to use is totally dependent on what the requirement. For example, SOAP is a better choice for applications that have complex API so as to describe the services and methods, where formal contracts are agreed for the exchange format, where a guaranteed level of security is required etc. REST will be preferred when limiting bandwidth and resources, when operations are can be stateless and the information can be cached.</li>
+</ul>
+</li>
+</ul>
+<h3 id="rest-vs-openapi-vs-grpc">REST vs OpenAPI vs gRPC</h3>
+<ul>
+<li><a href="https://code.tutsplus.com/tutorials/rest-vs-grpc-battle-of-the-apis--cms-30711">REST vs. gRPC: Battle of the APIs</a></li>
+<li><a href="https://dzone.com/articles/comparing-openapi-with-grpc">Comparing OpenAPI With gRPC 🌟</a> OpenAPI is a great choice due to its interoperability. On the other hand, gRPC offers a better performance. Luckily, you don't have to choose one or the other.</li>
+</ul>
+<h2 id="tools">Tools</h2>
+<h3 id="api-testing">API Testing</h3>
+<ul>
+<li><a href="http://www.softwaretestingportal.com/2020/03/31/api-testing/">softwaretestingportal.com: API Testing, Key Terminologies and more...</a></li>
+<li><a href="https://dzone.com/articles/10-api-testing-tips-for-beginners-soap-amp-rest">dzone.com: 10 API Testing Tips for Beginners (SOAP and REST)</a> Let's take a look at ten API testing tips for beginners with a focus on REST APIs and SOAP APIs. </li>
+</ul>
+<h3 id="graphql">GraphQL</h3>
+<ul>
+<li><a href="https://graphql.org/">GraphQL</a> A query language for your API</li>
+<li><a href="https://www.openapis.org/faq">How is the OpenAPI Specification different from GraphQL?</a> How are screws better than nails? Both are useful tools that solve similar problems in slightly different ways. OpenAPI Specification offers a declarative contract that defines the structure of API requests and responses as discrete operations. GraphQL prefers an interface style that is more like querying a database and is best suited to graph databases. </li>
+</ul>
+<h2 id="free-web-services-public-apis">Free Web Services (Public APIs)</h2>
+<ul>
+<li><a href="http://free-web-services.com/">free-web-services.com</a></li>
+<li><a href="https://swagger.io/tools/swaggerhub/">SwaggerHub: Free Web Service</a></li>
+<li><a href="https://www.programmableweb.com/">programmableweb.com</a></li>
+<li><a href="https://any-api.com/">any-api.com</a></li>
+<li><a href="https://rapidapi.com/">Rapid API</a></li>
+</ul>
+<h2 id="related">Related</h2>
+<ul>
+<li><a href="https://blog.christianposta.com/microservices/do-i-need-an-api-gateway-if-i-have-a-service-mesh/">medium: Do I Need an API Gateway if I Use a Service Mesh? 🌟</a></li>
+<li><a href="https://dzone.com/articles/how-to-create-rest-api-with-spring-boot">Dzone: How to Create a REST API With Spring Boot</a></li>
+<li><a href="https://dzone.com/articles/spring-boot-restful-web-service-complete-example">Dzone: Step-By-Step Spring Boot RESTful Web Service Complete Example</a></li>
+<li><a href="https://www.oscarblancarteblog.com/2018/06/25/creando-un-api-rest-en-java-parte-1/">Creando un API REST en Java (parte 1)</a></li>
+</ul>
+
+  <br>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../swagger-code-generator-for-rest-apis/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../swagger-code-generator-for-rest-apis/" class="btn btn-xs btn-link">
+        Swagger code generator for REST APIs
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../storage/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../storage/" class="btn btn-xs btn-link">
+        Cloud Native Storage
+      </a>
+    </div>
+    
+  </div>
+
+    <br>
+</div>
+
+<footer class="col-md-12 wm-page-content">
+      <p>
+        <a href="https://github.com/melvinpetix/library/edit/master/docs/api.md"><i class="fa fa-github"></i>
+Edit on GitHub</a>
+      </p><p>2020 melvinpetix™</p>
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/melvinpetix/library/">Windmill Dark</a> theme by melvinpetix (noraj).</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="author" content="melvinpetix">
+    <link rel="canonical" href="https://petixnginx.tk/library/nexus-jfrog/">
+    <link rel="shortcut icon" href="../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Nexus & JFrog Artifactory - melvinpetix library</title>
+    <link href="../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/highlight.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "Nexus &amp; JFrog Artifactory", url: "#_top", children: [
+              {title: "Nexus Repository Manager (NXRM) 3", url: "#nexus-repository-manager-nxrm-3" },
+              {title: "JFrog Artifactory", url: "#jfrog-artifactory" },
+          ]},
+        ];
+
+    </script>
+    <script src="../js/base.js"></script>
+      <script src="../search/main.js"></script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../selenium-appium-zephyr/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../selenium-appium-zephyr/" class="btn btn-xs btn-link">
+        Selenium, Cucumber, Appium & Zephyr Jira plugin
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../sonarqube/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../sonarqube/" class="btn btn-xs btn-link">
+        SonarQube
+      </a>
+    </div>
+    
+  </div>
+
+    
+
+    <h1 id="nexus-jfrog-artifactory">Nexus &amp; JFrog Artifactory</h1>
+<ul>
+<li><a href="#nexus-repository-manager-nxrm-3">Nexus Repository Manager (NXRM) 3</a><ul>
+<li><a href="#getting-started">Getting Started</a></li>
+<li><a href="#setup-nexus-kubernetes-run-nexus3-with-docker-in-a-kubernetes-cluster">Setup Nexus Kubernetes. Run nexus3 with docker in a kubernetes cluster</a></li>
+<li><a href="#nexus-as-a-docker-repo">Nexus as a Docker repo</a><ul>
+<li><a href="#secure-docker-registries">Secure Docker Registries</a></li>
+</ul>
+</li>
+<li><a href="#ssltls-certificates">SSL/TLS Certificates</a><ul>
+<li><a href="#add-insecure-registry-to-docker">Add Insecure Registry to Docker</a></li>
+</ul>
+</li>
+<li><a href="#jenkins-integration-with-nexus">Jenkins Integration with Nexus</a></li>
+<li><a href="#nexus-3-configuration-as-code">Nexus 3 Configuration as Code</a></li>
+<li><a href="#nexus-cli">Nexus CLI</a></li>
+<li><a href="#sonatype-nexus-community">Sonatype Nexus Community</a></li>
+</ul>
+</li>
+<li><a href="#jfrog-artifactory">JFrog Artifactory</a></li>
+</ul>
+<h2 id="nexus-repository-manager-nxrm-3">Nexus Repository Manager (NXRM) 3</h2>
+<ul>
+<li><a href="https://www.sonatype.com/nexus-repository-oss">sonatype.com/nexus-repository-oss</a></li>
+<li><a href="https://help.sonatype.com/repomanager3">Nexus Repository Manager (NXRM) 3 🌟</a></li>
+</ul>
+<h3 id="getting-started">Getting Started</h3>
+<ul>
+<li><a href="https://dzone.com/refcardz/binary-repository-management">Dzone refcard: Using Repository Managers</a> The Best Way to Organize, Store, and Distribute Software Components</li>
+<li><a href="https://dzone.com/refcardz/binary-repository-management">Dzone Refcard: Binary Repository Management</a></li>
+<li><a href="https://dzone.com/articles/getting-started-nexus-maven">Dzone: Getting started with Nexus</a></li>
+<li><a href="https://dzone.com/articles/nexus-guide-update-january-2018">Dzone: Nexus Guide Update January 2018</a></li>
+</ul>
+<h3 id="setup-nexus-kubernetes-run-nexus3-with-docker-in-a-kubernetes-cluster">Setup Nexus Kubernetes. Run nexus3 with docker in a kubernetes cluster</h3>
+<ul>
+<li><a href="https://github.com/sonatype-nexus-community/nexus-kubernetes-openshift">Sonatype Nexus Community: Nexus Kubernetes OpenShift 🌟</a></li>
+<li><a href="https://devopscube.com/setup-nexus-kubernetes/">Devopscube.com: Setup Nexus Kubernetes 🌟</a></li>
+<li><a href="https://stackoverflow.com/questions/42766349/run-nexus-3-with-docker-in-a-kubernetes-cluster">stackoverflow: run nexus3 with docker in a kubernetes cluster</a></li>
+<li><a href="https://github.com/jetstack/cert-manager/">https://github.com/jetstack/cert-manager/</a></li>
+</ul>
+<h3 id="nexus-as-a-docker-repo">Nexus as a Docker repo</h3>
+<ul>
+<li><a href="https://help.sonatype.com/repomanager3/formats/docker-registry">Docker Registry</a></li>
+<li><a href="https://blog.sonatype.com/using-nexus-3-as-your-repository-part-3-docker-images">blog.sonatype.com: Using Nexus 3 as Your Repository – Part 3: Docker Images 🌟</a></li>
+<li><a href="https://dzone.com/articles/setting-up-a-docker-private-registry-with-authenti">Dzone: Setting up a docker private registry with authentication</a></li>
+<li><a href="https://support.sonatype.com/hc/en-us/articles/360009696054-How-to-delete-docker-images-from-Nexus-Repository-Manager">sonatype: how to delete docker images from Nexus Repository Manager</a></li>
+<li><a href="https://hackernoon.com/cleanup-old-docker-images-from-nexus-repository-617b1004dad8">hackermoon.com: cleanup old docker images from nexus repository</a></li>
+</ul>
+<h4 id="secure-docker-registries">Secure Docker Registries</h4>
+<ul>
+<li><a href="https://guides.sonatype.com/repo3/technical-guides/secure-docker-registries/">guides.sonatype.com: secure docker registries</a></li>
+<li><a href="https://support.sonatype.com/hc/en-us/articles/217542177-Using-Self-Signed-Certificates-with-Nexus-Repository-Manager-and-Docker-Daemon">support.sonatype.com: Using self signed certificates with Nexus Repository Manager and Docker Daemon</a></li>
+</ul>
+<h3 id="ssltls-certificates">SSL/TLS Certificates</h3>
+<ul>
+<li><a href="https://guides.sonatype.com/repo3/technical-guides/secure-docker-registries/">guides.sonatype.com: secure docker registries</a></li>
+<li><a href="https://support.sonatype.com/hc/en-us/articles/213465768-SSL-Certificate-Guide">support.sonatype.com: SSL Certificate Guide</a></li>
+<li><a href="https://help.sonatype.com/repomanager3/security/configuring-ssl?_ga=2.250230211.411976214.1575978022-1513910029.1575978022#ConfiguringSSL-InboundSSL-ConfiguringtoServeContentviaHTTPS">help.sonatype.com: Inbound SSL - Configuring to Serve Content via HTTPS</a></li>
+<li><a href="https://www.nginx.com/blog/using-free-ssltls-certificates-from-lets-encrypt-with-nginx/">nginx.com: Using Free Let’s Encrypt SSL/TLS Certificates with NGINX</a></li>
+</ul>
+<h4 id="add-insecure-registry-to-docker">Add Insecure Registry to Docker</h4>
+<ul>
+<li><a href="https://docs.docker.com/registry/insecure/">Test an insecure registry 🌟</a></li>
+<li><a href="https://github.com/Juniper/contrail-docker/wiki/Configure-docker-service-to-use-insecure-registry">Configure Docker Service To Use Insecure Registry</a></li>
+<li><a href="https://forums.docker.com/t/running-an-insecure-registry-insecure-registry/8159">Running an insecure registry –insecure-registry</a></li>
+<li><a href="https://intellipaat.com/community/19079/add-insecure-registry-to-docker">Add Insecure Registry to Docker</a></li>
+</ul>
+<h3 id="jenkins-integration-with-nexus">Jenkins Integration with Nexus</h3>
+<ul>
+<li><a href="https://help.sonatype.com/integrations/nexus-and-continuous-integration/nexus-platform-plugin-for-jenkins">Nexus Platform Plugin for Jenkins</a></li>
+<li><a href="https://dzone.com/articles/jenkins-publish-maven-artifacts-to-nexus-oss-using">Jenkins: Publish Maven Artifacts to Nexus OSS Using Pipelines or Maven Jobs 🌟</a> Check out how following this tutorial to connect Maven and Nexus OSS can help increase your CI/CD pipelines.</li>
+<li><a href="https://cloudogu.com/en/blog/cd-with-nexus-jenkins-ces">Continuous Delivery with Sonatype Nexus, Jenkins and the Cloudogu Ecosystem</a></li>
+<li><a href="https://www.youtube.com/watch?v=qbO4MTESiJQ">youtube: Jenkins Integration with Nexus</a></li>
+<li><a href="https://www.youtube.com/watch?v=7NmGSnqLd58">youtube: uploading artifacts from jenkins to nexus</a></li>
+</ul>
+<h3 id="nexus-3-configuration-as-code">Nexus 3 Configuration as Code</h3>
+<ul>
+<li><a href="https://github.com/samrocketman/nexus3-config-as-code">github.com/samrocketman/nexus3-config-as-code</a> </li>
+<li><a href="https://blog.mimacom.com/automate-nexus/">blog.mimacom.com/automate-nexus</a> </li>
+<li><a href="https://github.com/cinhtau/sonatype-nexus-waffle">github.com/cinhtau/sonatype-nexus-waffle</a> </li>
+</ul>
+<h3 id="nexus-cli">Nexus CLI</h3>
+<ul>
+<li><a href="https://github.com/mlabouardy/nexus-cli">GitHub: Nexus-CLI</a></li>
+<li><a href="https://nexus3-cli.readthedocs.io">nexus3-cli.readthedocs.io</a></li>
+</ul>
+<h3 id="sonatype-nexus-community">Sonatype Nexus Community</h3>
+<ul>
+<li><a href="https://github.com/sonatype-nexus-community">Sonatype Nexus Community 🌟</a></li>
+<li>Check out the <a href="https://stackoverflow.com/questions/tagged/nexus3">Nexus3</a> tag on Stack Overflow</li>
+</ul>
+<h2 id="jfrog-artifactory">JFrog Artifactory</h2>
+<ul>
+<li><a href="https://jfrog.com/blog/jfrog-artifactory-kubernetes-registry/">JFrog Artifactory: Your Kubernetes Registry</a></li>
+<li><a href="https://jfrog.com/whitepaper/the-jfrog-journey-to-kubernetes-best-practices-for-taking-your-containers-all-the-way-to-production/">The JFrog journey to kubernetes: best practices for taking your containers all the way to production</a></li>
+</ul>
+
+  <br>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../selenium-appium-zephyr/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../selenium-appium-zephyr/" class="btn btn-xs btn-link">
+        Selenium, Cucumber, Appium & Zephyr Jira plugin
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../sonarqube/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../sonarqube/" class="btn btn-xs btn-link">
+        SonarQube
+      </a>
+    </div>
+    
+  </div>
+
+    <br>
+</div>
+
+<footer class="col-md-12 wm-page-content">
+      <p>
+        <a href="https://github.com/melvinpetix/library/edit/master/docs/nexus-jfrog.md"><i class="fa fa-github"></i>
+Edit on GitHub</a>
+      </p><p>2020 melvinpetix™</p>
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/melvinpetix/library/">Windmill Dark</a> theme by melvinpetix (noraj).</p>
+</footer>
+
+</body>
+</html>
