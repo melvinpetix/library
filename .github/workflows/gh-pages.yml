@@ -18,15 +18,8 @@ jobs:
           architecture: 'x64'
       - name: Install dependencies
         run: |
-          python3 -m pip uninstall mkdocs-bootswatch
-          python3 -m pip uninstall windmill-dark 
-          python3 -m pip uninstall bootstrap
-          python3 -m pip uninstall bootstrap4
-          python3 -m pip uninstall mkdocs-bootstrap
-          python3 -m pip uninstall mkdocs-bootstrap4
-          python3 -m pip uninstall mkdocs
           python3 -m pip install mkdocs
-          python3 -m pip install mkdocs-bootswatch
+          python3 -m pip install mkdocs-windmill-dark
           python3 -m pip install --upgrade pip                    
           
       - name: Build site
